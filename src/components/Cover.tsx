@@ -29,7 +29,7 @@ export default function Cover({
       </h2>
 
       <h2 className="text-center text-3xl font-bold mb-8">
-        Dira
+        Prisilia Indira Oktavia
       </h2>
 
       <p className="text-gray-400">

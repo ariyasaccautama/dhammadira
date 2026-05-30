@@ -15,7 +15,7 @@ export default function Hero() {
       </h1>
 
       <h1 className="text-5xl md:text-7xl font-black">
-        Dira
+        Prisilia Indira Oktavia
       </h1>
 
       <p className="mt-8 text-gray-400">

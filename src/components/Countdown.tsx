@@ -1,26 +1,71 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Confetti from "react-confetti";
+
+const WEDDING_DATE = new Date(
+  "2026-08-08T10:00:00+07:00"
+);
+
+type TimeLeft = {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+};
 
 export default function Countdown() {
-  const weddingDate = new Date("2026-08-08T10:00:00+07:00");
+  const [isWeddingDay, setIsWeddingDay] =
+    useState(false);
 
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const [windowSize, setWindowSize] =
+    useState({
+      width: 0,
+      height: 0,
+    });
 
+  const [timeLeft, setTimeLeft] =
+    useState<TimeLeft>({
+      days: 0,
+      hours: 0,
+      minutes: 0,
+      seconds: 0,
+    });
+
+  // Handle window resize
   useEffect(() => {
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    handleResize();
+
+    window.addEventListener(
+      "resize",
+      handleResize
+    );
+
+    return () => {
+      window.removeEventListener(
+        "resize",
+        handleResize
+      );
+    };
+  }, []);
+
+  // Countdown timer
+  useEffect(() => {
+    const updateCountdown = () => {
+      const now = Date.now();
 
       const distance =
-        weddingDate.getTime() - now;
+        WEDDING_DATE.getTime() - now;
 
       if (distance <= 0) {
-        clearInterval(interval);
+        setIsWeddingDay(true);
 
         setTimeLeft({
           days: 0,
@@ -50,70 +95,98 @@ export default function Countdown() {
         ),
 
         seconds: Math.floor(
-          (distance % (1000 * 60)) /
-            1000
+          (distance % (1000 * 60)) / 1000
         ),
       });
-    }, 1000);
+    };
+
+    updateCountdown();
+
+    const interval = setInterval(
+      updateCountdown,
+      1000
+    );
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="py-24 px-6 text-center">
+    <>
+      {isWeddingDay && (
+        <Confetti
+          width={windowSize.width}
+          height={windowSize.height}
+          recycle={true}
+          numberOfPieces={250}
+        />
+      )}
 
-      <h2 className="text-4xl font-bold mb-4">
-        Menuju Hari Bahagia
-      </h2>
+      <section className="py-24 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-4">
+          Menuju Hari Bahagia
+        </h2>
 
-      <p className="text-gray-400 mb-10">
-        Sabtu, 8 Agustus 2026
-      </p>
+        <p className="text-gray-400 mb-10">
+          Sabtu, 8 Agustus 2026
+        </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        {isWeddingDay ? (
+          <div className="space-y-4">
+            <h3 className="text-5xl font-black text-red-600">
+              ❤️ Hari Bahagia ❤️
+            </h3>
 
-        <div className="bg-zinc-900 rounded-xl p-6">
-          <div className="text-4xl font-bold">
-            {timeLeft.days}
+            <p className="text-xl text-gray-300">
+              Selamat kepada
+              <br />
+              Prasetya Dhamma Permana Putra
+              & Prisilia Indira Oktavia
+            </p>
           </div>
+        ) : (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <div className="bg-zinc-900 rounded-xl p-6">
+              <div className="text-4xl font-bold">
+                {timeLeft.days}
+              </div>
 
-          <div className="text-gray-400">
-            Hari
+              <div className="text-gray-400">
+                Hari
+              </div>
+            </div>
+
+            <div className="bg-zinc-900 rounded-xl p-6">
+              <div className="text-4xl font-bold">
+                {timeLeft.hours}
+              </div>
+
+              <div className="text-gray-400">
+                Jam
+              </div>
+            </div>
+
+            <div className="bg-zinc-900 rounded-xl p-6">
+              <div className="text-4xl font-bold">
+                {timeLeft.minutes}
+              </div>
+
+              <div className="text-gray-400">
+                Menit
+              </div>
+            </div>
+
+            <div className="bg-zinc-900 rounded-xl p-6">
+              <div className="text-4xl font-bold">
+                {timeLeft.seconds}
+              </div>
+
+              <div className="text-gray-400">
+                Detik
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div className="bg-zinc-900 rounded-xl p-6">
-          <div className="text-4xl font-bold">
-            {timeLeft.hours}
-          </div>
-
-          <div className="text-gray-400">
-            Jam
-          </div>
-        </div>
-
-        <div className="bg-zinc-900 rounded-xl p-6">
-          <div className="text-4xl font-bold">
-            {timeLeft.minutes}
-          </div>
-
-          <div className="text-gray-400">
-            Menit
-          </div>
-        </div>
-
-        <div className="bg-zinc-900 rounded-xl p-6">
-          <div className="text-4xl font-bold">
-            {timeLeft.seconds}
-          </div>
-
-          <div className="text-gray-400">
-            Detik
-          </div>
-        </div>
-
-      </div>
-
-    </section>
+        )}
+      </section>
+    </>
   );
 }
