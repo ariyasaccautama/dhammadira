@@ -31,10 +31,11 @@ export default function Location() {
 
           <div className="overflow-hidden rounded-xl border border-zinc-800">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.955882207236!2d106.98236897316806!3d-6.269532661372033!2m3!1f0!2f0!3f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698dc0c2ea3dbd%3A0x705bfac29d0981a7!2sOmah%20Kebon%20Bekasi!5e0!3m2!1sen!2sid!4v1780121349545!5m2!1sen!2sid"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.955882207236!2d106.98236897316806!3d-6.269532661372033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698dc0c2ea3dbd%3A0x705bfac29d0981a7!2sOmah%20Kebon%20Bekasi!5e0!3m2!1sen!2sid!4v1780124869346!5m2!1sen!2sid"
               width="100%"
               height="280"
               style={{ border: 0 }}
+              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

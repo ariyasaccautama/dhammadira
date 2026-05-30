@@ -22,7 +22,7 @@ export default function Cover({
         The Wedding Of
       </p>
 
-      <h2 className="text-center text-4xl font-bold">
+      <h2 className="text-center text-3xl md:text-4xl font-bold">
         {weddingData.groom.name}
       </h2>
 

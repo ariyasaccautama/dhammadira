@@ -18,12 +18,12 @@ export const weddingData = {
   event: {
     akad: {
       date: "8 Agustus 2026",
-      time: "19:00 - 21:00 WIB",
+      time: "10:00 - 11:00 WIB",
     },
 
     reception: {
       date: "8 Agustus 2026",
-      time: "11:00 - 16:00 WIB",
+      time: "19:00 - 21:00 WIB",
     },
   },
 
