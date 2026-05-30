@@ -30,7 +30,7 @@ export default function Location() {
 
           <div className="mt-6 text-center">
             <a
-              href="https://maps.app.goo.gl/MkJ5hhTCtRsoioDq6"
+              href="https://www.google.com/maps/place/Omah+Kebon+Bekasi/@-6.2695327,106.982369,17z/data=!3m1!4b1!4m6!3m5!1s0x2e698dc0c2ea3dbd:0x705bfac29d0981a7!8m2!3d-6.269538!4d106.9849439!16s%2Fg%2F11g6xb9fbg?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg font-bold transition"
