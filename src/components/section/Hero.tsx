@@ -80,7 +80,7 @@ export default function Hero() {
                 transition
               "
             >
-              ⏵Putar Kisah Kami
+              ⏵ Putar Kisah Kami
             </button>
 
             <button
