@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 
 const WEDDING_DATE = new Date(
-  "2026-08-08T10:00:00+07:00"
+  "2026-08-08T19:00:00+07:00"
 );
 
 type TimeLeft = {

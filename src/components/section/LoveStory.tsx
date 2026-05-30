@@ -27,7 +27,7 @@ export default function LoveStory() {
   ];
 
   return (
-    <section className="py-24 px-6">
+    <section id="love-story" className="py-24 px-6">
       <h2 className="text-4xl font-bold mb-10 text-center">
         Love Story
       </h2>
@@ -36,11 +36,25 @@ export default function LoveStory() {
         {stories.map((story) => (
           <div
             key={story.title}
-            className="bg-zinc-900 rounded-xl p-5 hover:scale-105 transition"
+            className="
+            bg-[#141414]
+            border
+            border-red-900/30
+            hover:border-red-600
+            hover:scale-105
+            transition
+            duration-300
+            rounded-xl
+            p-5
+          "
           >
-            <div className="h-40 bg-zinc-800 rounded-lg mb-4 flex items-center justify-center">
-              FOTO
-            </div>
+            <div className="h-40 bg-zinc-800 rounded-lg mb-4 overflow-hidden">
+            <img
+              src="/images/story1.jpg"
+              alt={story.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
 
             <p className="text-red-500 text-sm">
               {story.year}
