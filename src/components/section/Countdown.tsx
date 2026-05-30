@@ -132,9 +132,9 @@ export default function Countdown() {
 
         {isWeddingDay ? (
           <div className="space-y-4">
-            <h3 className="text-5xl font-black text-red-600">
+            <h4 className="text-5xl font-black text-red-600">
               ❤️ Hari Bahagia ❤️
-            </h3>
+            </h4>
 
             <p className="text-xl text-gray-300">
               Selamat kepada
