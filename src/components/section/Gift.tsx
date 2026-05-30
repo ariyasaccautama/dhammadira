@@ -147,7 +147,7 @@ export default function Gift() {
           </h3>
 
           <p className="text-gray-300">
-            {weddingData.location.address}
+            {weddingData.kado.holder}
           </p>
         </div>
 

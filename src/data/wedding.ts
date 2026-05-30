@@ -51,4 +51,9 @@ export const weddingData = {
       holder: "Prisilia Indira Oktavia",
     },
   },
+
+  kado:{
+    holder:
+    "Jl. Anggrek, No.16 RT 03/06, Kel. Bojong Menteng, Kec. Rawalumbu, Kota Bekasi, 17117"
+  }
 };

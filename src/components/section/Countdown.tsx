@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 
 const WEDDING_DATE = new Date(
-  "2026-05-08T00:00:01+07:00"
+  "2026-08-08T00:00:01+07:00"
 );
 
 type TimeLeft = {
@@ -122,13 +122,18 @@ export default function Countdown() {
       )}
 
       <section className="py-24 px-6 text-center">
-        <h2 className="text-4xl font-bold mb-4">
-          Menuju Hari Bahagia
-        </h2>
 
-        <p className="text-gray-400 mb-10">
-          Sabtu, 8 Agustus 2026
-        </p>
+        {!isWeddingDay && (
+          <>
+            <h2 className="text-4xl font-bold mb-4">
+              Menuju Hari Bahagia
+            </h2>
+
+            <p className="text-gray-400 mb-10">
+              Sabtu, 8 Agustus 2026
+            </p>
+          </>
+        )}
 
         {isWeddingDay ? (
           <div className="space-y-4">
