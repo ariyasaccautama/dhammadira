@@ -4,66 +4,176 @@ export default function Event() {
   return (
     <section
       id="event"
-      className="py-24 px-6 text-center"
+      className="py-24 px-6"
     >
-      <h2 className="text-4xl font-bold mb-12">
+      <h2 className="text-4xl font-bold text-center mb-12">
         Jadwal Acara
       </h2>
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
-        {/* Akad */}
+        {/* Pemberkatan */}
         <div
           className="
-            bg-[#141414]
+            relative
+            overflow-hidden
+            rounded-3xl
+            min-h-[520px]
             border
             border-red-900/30
             hover:border-red-600
-            hover:scale-105
             transition
             duration-300
-            rounded-2xl
-            p-8
           "
         >
-          <h3 className="text-2xl font-bold mb-4">
-            Pemberkatan
-          </h3>
+          <img
+            src="/images/pemberkatan.png"
+            alt="Pemberkatan"
+            className="
+              absolute
+              inset-0
+              w-full
+              h-full
+              object-cover
+            "
+          />
 
-          <p className="text-gray-300">
-            {weddingData.event.akad.date}
-          </p>
+          <div
+            className="
+              absolute
+              inset-0
+              bg-gradient-to-t
+              from-black
+              via-black/70
+              to-black/20
+            "
+          />
 
-          <p className="text-red-500 mt-2 font-semibold">
-            {weddingData.event.akad.time}
-          </p>
+          <div className="relative z-10 p-8 h-full flex flex-col justify-end">
+
+            <p className="text-red-500 font-semibold mb-2">
+              PEMBERKATAN
+            </p>
+
+            <h3 className="text-3xl font-black mb-4">
+              {weddingData.event.akad.location.venue}
+            </h3>
+
+            <p className="text-gray-300">
+              {weddingData.event.akad.date}
+            </p>
+
+            <p className="text-gray-300 mb-4">
+              {weddingData.event.akad.time}
+            </p>
+
+            <p className="text-gray-400 mb-6">
+              {weddingData.event.akad.location.address}
+            </p>
+
+            <a
+              href={
+                weddingData.event.akad.location.maps
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                w-fit
+                bg-red-600
+                hover:bg-red-700
+                px-6
+                py-3
+                rounded-lg
+                font-bold
+                transition
+              "
+            >
+              📍 Lihat Lokasi
+            </a>
+
+          </div>
         </div>
 
         {/* Resepsi */}
         <div
           className="
-            bg-[#141414]
+            relative
+            overflow-hidden
+            rounded-3xl
+            min-h-[520px]
             border
             border-red-900/30
             hover:border-red-600
-            hover:scale-105
             transition
             duration-300
-            rounded-2xl
-            p-8
           "
         >
-          <h3 className="text-2xl font-bold mb-4">
-            Resepsi
-          </h3>
+          <img
+            src="/images/resepsi.png"
+            alt="Resepsi"
+            className="
+              absolute
+              inset-0
+              w-full
+              h-full
+              object-cover
+            "
+          />
 
-          <p className="text-gray-300">
-            {weddingData.event.reception.date}
-          </p>
+          <div
+            className="
+              absolute
+              inset-0
+              bg-gradient-to-t
+              from-black
+              via-black/70
+              to-black/20
+            "
+          />
 
-          <p className="text-red-500 mt-2 font-semibold">
-            {weddingData.event.reception.time}
-          </p>
+          <div className="relative z-10 p-8 h-full flex flex-col justify-end">
+
+            <p className="text-red-500 font-semibold mb-2">
+              RESEPSI
+            </p>
+
+            <h3 className="text-3xl font-black mb-4">
+              {weddingData.event.reception.location.venue}
+            </h3>
+
+            <p className="text-gray-300">
+              {weddingData.event.reception.date}
+            </p>
+
+            <p className="text-gray-300 mb-4">
+              {weddingData.event.reception.time}
+            </p>
+
+            <p className="text-gray-400 mb-6">
+              {weddingData.event.reception.location.address}
+            </p>
+
+            <a
+              href={
+                weddingData.event.reception.location.maps
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                w-fit
+                bg-red-600
+                hover:bg-red-700
+                px-6
+                py-3
+                rounded-lg
+                font-bold
+                transition
+              "
+            >
+              📍 Lihat Lokasi
+            </a>
+
+          </div>
         </div>
 
       </div>

@@ -7,13 +7,19 @@ import toast from "react-hot-toast";
 export default function Gift() {
   const copyToClipboard = (
     text: string,
-    bank: string
+    label: string
   ) => {
     navigator.clipboard.writeText(text);
 
-    toast.success(
-      `Nomor rekening ${bank} berhasil disalin`
-    );
+    if (label === "Alamat") {
+      toast.success(
+        "Alamat berhasil disalin"
+      );
+    } else {
+      toast.success(
+        `Nomor rekening ${label} berhasil disalin`
+      );
+    }
   };
 
   return (
@@ -132,7 +138,6 @@ export default function Gift() {
 
       {/* Kirim Kado */}
       <div className="max-w-5xl mx-auto mt-10">
-
         <div
           className="
             bg-[#141414]
@@ -146,11 +151,34 @@ export default function Gift() {
             Kirim Kado
           </h3>
 
-          <p className="text-gray-300">
-            {weddingData.kado.holder}
+          <p className="text-gray-400 mt-2 mb-8 leading-relaxed">
+            {weddingData.giftAddress.address}
           </p>
-        </div>
 
+          <button
+            onClick={() =>
+              copyToClipboard(
+                weddingData.giftAddress.address,
+                "Alamat"
+              )
+            }
+            className="
+              flex
+              items-center
+              gap-2
+              bg-red-600
+              hover:bg-red-700
+              px-5
+              py-3
+              rounded-lg
+              font-bold
+              transition
+            "
+          >
+            <Copy size={18} />
+            Copy Alamat
+          </button>
+        </div>
       </div>
     </section>
   );

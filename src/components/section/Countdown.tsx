@@ -6,7 +6,7 @@ import Confetti from "react-confetti";
 import { weddingData } from "../../data/wedding";
 
 const WEDDING_DATE = new Date(
-  weddingData.event.akad.countdownDate
+  weddingData.event.countdownDate
 );
 
 type TimeLeft = {

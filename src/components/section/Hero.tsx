@@ -19,6 +19,13 @@ export default function Hero() {
       });
   };
 
+  const weddingDate = new Date(
+    weddingData.event.countdownDate
+  );
+
+  const isWeddingDay =
+    new Date() >= weddingDate;
+
   return (
     <section className="relative min-h-screen overflow-hidden">
 
@@ -61,13 +68,52 @@ export default function Hero() {
             {weddingData.bride.name}
           </h1>
 
-          <p className="mt-8 text-lg text-gray-300">
-            {weddingData.event.akad.date}
-          </p>
+          <div className="flex flex-wrap items-center gap-3 mt-6">
 
-          <p className="mt-8 text-lg text-gray-300">
-            Atas karunia Tuhan Yang Maha Esa, perkenankanlah kami menyampaikan kabar bahagia kepada Bapak/Ibu/Saudara/i mengenai hari pernikahan kami.
-          </p>
+            <span
+              className={`
+                px-6
+                py-2
+                rounded-full
+                font-bold
+                text-white
+                ${
+                  isWeddingDay
+                    ? "bg-green-600"
+                    : "bg-red-600"
+                }
+              `}
+            >
+              {isWeddingDay
+                ? "Today!"
+                : "Coming Soon"}
+            </span>
+
+            <span className="text-gray-300 text-lg">
+              • {weddingData.event.akad.date}
+            </span>
+
+          </div>
+
+          <div className="flex flex-wrap gap-3 mt-8">
+
+            <span className="bg-zinc-700 text-gray-200 px-5 py-2 rounded-full font-semibold">
+              #Wedding
+            </span>
+
+            <span className="bg-zinc-700 text-gray-200 px-5 py-2 rounded-full font-semibold">
+              #DhammaDira
+            </span>
+
+            <span className="bg-zinc-700 text-gray-200 px-5 py-2 rounded-full font-semibold">
+              #GetMarried
+            </span>
+
+            <span className="bg-zinc-700 text-gray-200 px-5 py-2 rounded-full font-semibold">
+              #Documenter
+            </span>
+
+          </div>
 
           <div className="flex flex-wrap gap-4 mt-8">
 

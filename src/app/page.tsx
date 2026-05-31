@@ -7,12 +7,15 @@ import Cover from "../components/Cover";
 import NitflixIntro from "../components/NitflixIntro";
 import Dresscode from "../components/section/Dresscode";
 
+import FeaturedMovie from "../components/section/FeaturedMovie";
+
 import Hero from "../components/section/Hero";
 import Countdown from "../components/section/Countdown";
 import Couple from "../components/section/Couple";
 import Event from "../components/section/Event";
 import LoveStory from "../components/section/LoveStory";
-import Location from "../components/section/Location";
+// import Location from "../components/section/Location";
+import RSVP from "../components/section/RSVP";
 import Gift from "../components/section/Gift";
 
 function HomeContent() {
@@ -73,6 +76,8 @@ function HomeContent() {
 
       <Dresscode />
 
+      <FeaturedMovie />
+
       <Countdown />
 
       <Couple />
@@ -81,7 +86,9 @@ function HomeContent() {
 
       <LoveStory />
 
-      <Location />
+      {/* <Location /> */}
+
+      <RSVP />
 
       <Gift />
 
