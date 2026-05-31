@@ -21,6 +21,9 @@ import Gift from "../components/section/Gift";
 function HomeContent() {
   const searchParams = useSearchParams();
 
+  const guestId =
+    searchParams.get("id") || "";
+
   const guestName =
     searchParams.get("to") ||
     "Tamu Undangan";
@@ -88,7 +91,10 @@ function HomeContent() {
 
       {/* <Location /> */}
 
-      <RSVP />
+      <RSVP
+        guestId={guestId}
+        guestName={guestName}
+      />
 
       <Gift />
 
