@@ -42,6 +42,7 @@ export default function RSVP() {
     }
   }, [API]);
 
+  //test
   // Fetch sekali saat mount
   // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { loadWishes(); }, [loadWishes]);
