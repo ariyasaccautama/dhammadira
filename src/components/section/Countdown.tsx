@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 
+import { weddingData } from "../../data/wedding";
+
 const WEDDING_DATE = new Date(
-  "2026-08-08T00:00:01+07:00"
+  weddingData.event.akad.countdownDate
 );
 
 type TimeLeft = {

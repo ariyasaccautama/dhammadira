@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 
 import Cover from "../components/Cover";
 import NitflixIntro from "../components/NitflixIntro";
+import Dresscode from "../components/section/Dresscode";
 
 import Hero from "../components/section/Hero";
 import Countdown from "../components/section/Countdown";
@@ -69,6 +70,8 @@ function HomeContent() {
     <main className="bg-black text-white">
 
       <Hero />
+
+      <Dresscode />
 
       <Countdown />
 

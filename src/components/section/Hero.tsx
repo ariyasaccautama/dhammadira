@@ -65,6 +65,10 @@ export default function Hero() {
             {weddingData.event.akad.date}
           </p>
 
+          <p className="mt-8 text-lg text-gray-300">
+            Atas karunia Tuhan Yang Maha Esa, perkenankanlah kami menyampaikan kabar bahagia kepada Bapak/Ibu/Saudara/i mengenai hari pernikahan kami.
+          </p>
+
           <div className="flex flex-wrap gap-4 mt-8">
 
             <button

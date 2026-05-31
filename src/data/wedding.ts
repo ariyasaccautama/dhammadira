@@ -8,7 +8,7 @@ export const weddingData = {
   },
 
   bride: {
-    name: "Prisilia Indira Oktavia",
+    name: "Prisilia Indira Octavia",
     parent:
       "Putri Pertama dari Bapak Drs. Supriyoto Hadisardjono, S.E, M.Ec.Dev & Ibu Indrayani Sri Sulistyowati, S.H, M.H",
     instagram:
@@ -18,8 +18,11 @@ export const weddingData = {
   event: {
     akad: {
       date: "8 Agustus 2026",
-      time: "10:00 - 11:00 WIB",
+      time: "13:00 - 15:00 WIB",
+      countdownDate:
+      "2026-08-08T00:00:01+07:00"
     },
+
 
     reception: {
       date: "8 Agustus 2026",

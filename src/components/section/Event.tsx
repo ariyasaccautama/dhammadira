@@ -27,7 +27,7 @@ export default function Event() {
           "
         >
           <h3 className="text-2xl font-bold mb-4">
-            Akad Nikah
+            Pemberkatan
           </h3>
 
           <p className="text-gray-300">
