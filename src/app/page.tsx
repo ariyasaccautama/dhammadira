@@ -5,10 +5,11 @@ import { useSearchParams } from "next/navigation";
 
 import Cover from "../components/Cover";
 import NitflixIntro from "../components/NitflixIntro";
+
+import AudioPlayer from "../components/AudioPlayer";
+
 import Dresscode from "../components/section/Dresscode";
-
 import FeaturedMovie from "../components/section/FeaturedMovie";
-
 import Hero from "../components/section/Hero";
 import Countdown from "../components/section/Countdown";
 import Couple from "../components/section/Couple";
@@ -75,36 +76,43 @@ function HomeContent() {
   }
 
   return (
-    <main className="bg-black text-white">
-
-      <Hero />
-
-      <Dresscode />
-
-      <FeaturedMovie />
-
-      <Countdown />
-
-      <Couple />
-
-      <Event />
-
-      <LoveStory />
-
-      <PhotoCollection />
-
-      {/* <Location /> */}
-
-      <RSVP
-        guestId={guestId}
-        guestName={guestName}
+    <>
+      {/* Background Music */}
+      <AudioPlayer
+        isOpen={opened}
       />
 
-      <Gift />
+      <main className="bg-black text-white">
 
-      <Closing />
+        <Hero />
 
-    </main>
+        <Dresscode />
+
+        <FeaturedMovie />
+
+        <Countdown />
+
+        <Couple />
+
+        <Event />
+
+        <LoveStory />
+
+        <PhotoCollection />
+
+        {/* <Location /> */}
+
+        <RSVP
+          guestId={guestId}
+          guestName={guestName}
+        />
+
+        <Gift />
+
+        <Closing />
+
+      </main>
+    </>
   );
 }
 
