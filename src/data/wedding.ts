@@ -3,7 +3,7 @@ export const weddingData = {
     name: "Prasetya Dhamma Permana Putra",
 
     parent:
-      "Putra Pertama dari Bapak Tomo, S.Pd, M.Pd <br/>& Ibu Rusmiyati, S.Ag, M.Ag",
+      "Putra Pertama dari Bapak Tomo, S.Pd, M.Pd\n& Ibu Rusmiyati, S.Ag, M.Ag",
 
     instagram:
       "https://www.instagram.com/prasdham/",
@@ -13,7 +13,7 @@ export const weddingData = {
     name: "Prisilia Indira Octavia",
 
     parent:
-      "Putri Pertama dari Bapak Drs. Supriyoto Hadisardjono, S.E, M.Ec.Dev & Ibu Indrayani Sri Sulistyowati, S.H, M.H",
+      "Putri Pertama dari Bapak Drs. Supriyoto Hadisardjono, S.E, M.Ec.Dev\n& Ibu Indrayani Sri Sulistyowati, S.H, M.H",
 
     instagram:
       "https://www.instagram.com/dirasoebroto/",
@@ -106,4 +106,37 @@ export const weddingData = {
     address:
       "Jl. Anggrek, No.16 RT 03/06, Kel. Bojong Menteng, Kec. Rawalumbu, Kota Bekasi, 17117",
   },
+
+  favoriteMoments: [
+    {
+      title: "Ada Apa Dengan Dira?",
+      image: "/images/1.png",
+      badge: "Eksklusif",
+    },
+    {
+      title: "Dua Latar Biru",
+      image: "/images/2.png",
+      badge: "Premium 👑",
+    },
+    {
+      title: "SORE",
+      image: "/images/3.png",
+      badge: "Favorite",
+    },
+    {
+      title: "Crazy Rich Asians",
+      image: "/images/4.jpg",
+      badge: "Top 3",
+    },
+    {
+      title: "Pernikahan Dini",
+      image: "/images/5.png",
+      badge: "Top 2",
+    },
+    {
+      title: "Keluarga Cemara",
+      image: "/images/6.png",
+      badge: "Top 1",
+    },
+  ],
 };

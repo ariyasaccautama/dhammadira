@@ -14,6 +14,7 @@ import Countdown from "../components/section/Countdown";
 import Couple from "../components/section/Couple";
 import Event from "../components/section/Event";
 import LoveStory from "../components/section/LoveStory";
+import PhotoCollection from "../components/section/PhotoCollection";
 // import Location from "../components/section/Location";
 import RSVP from "../components/section/RSVP";
 import Gift from "../components/section/Gift";
@@ -88,6 +89,8 @@ function HomeContent() {
       <Event />
 
       <LoveStory />
+
+      <PhotoCollection />
 
       {/* <Location /> */}
 

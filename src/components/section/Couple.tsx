@@ -28,7 +28,7 @@ export default function Couple() {
             {weddingData.groom.name}
           </h3>
 
-          <p className="text-gray-400 mt-3">
+          <p className="text-gray-400 mt-3 whitespace-pre-line">
             {weddingData.groom.parent}
           </p>
 
@@ -70,7 +70,7 @@ export default function Couple() {
             {weddingData.bride.name}
           </h3>
 
-          <p className="text-gray-400 mt-3">
+          <p className="text-gray-400 mt-3 whitespace-pre-line">
             {weddingData.bride.parent}
           </p>
 

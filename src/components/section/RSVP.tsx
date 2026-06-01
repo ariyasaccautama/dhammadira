@@ -241,6 +241,8 @@ export default function RSVP({
         RSVP & Ucapan
       </h2>
 
+      <p className="text-center mb-12"> Berikan ucapan harapan dan doa kepada kami </p>
+
       <div className="grid lg:grid-cols-2 gap-10 max-w-7xl mx-auto">
 
         {/* FORM */}
