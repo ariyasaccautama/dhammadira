@@ -3,7 +3,7 @@ export const weddingData = {
     name: "Prasetya Dhamma Permana Putra",
 
     parent:
-      "Putra Pertama dari Bapak Tomo, S.Pd, M.Pd & Ibu Rusmiyati, S.Ag, M.Ag",
+      "Putra Pertama dari Bapak Tomo, S.Pd, M.Pd <br/>& Ibu Rusmiyati, S.Ag, M.Ag",
 
     instagram:
       "https://www.instagram.com/prasdham/",
@@ -38,7 +38,7 @@ export const weddingData = {
 
   event: {
     countdownDate:
-      "2026-05-08T00:00:01+07:00",
+      "2026-08-08T00:00:01+07:00",
 
     akad: {
       title: "Pemberkatan",
@@ -52,7 +52,7 @@ export const weddingData = {
           "STI Vihāra Vipassanā Kusalacitta",
 
         address:
-          "Perum Bojong Menteng Indah, Jl. Kemuning Raya Dalam, RT 03/13, Bojong Menteng, Rawa Lumbu, RT.001/RW.013, Bojong Menteng, Kec. Rawalumbu, Kota Bekasi, Jawa Barat 17117",
+          "Perum Bojong Menteng Indah, Jl. Kemuning Raya Dalam, RT 03/13, Bojong Menteng, Rawalumbu, Kota Bekasi, Jawa Barat 17117",
 
         maps:
           "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.7032622176534!2d106.98607227316857!3d-6.302664861679031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69920e14e83bcf%3A0xd9e8ecb5c3168997!2sSTI%20Vih%C4%81ra%20Vipassan%C4%81%20Kusalacitta!5e0!3m2!1sid!2sid!4v1780206148629!5m2!1sid!2sid",
