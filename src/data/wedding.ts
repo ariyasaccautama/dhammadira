@@ -38,7 +38,7 @@ export const weddingData = {
 
   event: {
     countdownDate:
-      "2026-05-08T00:00:01+07:00",
+      "2026-08-08T00:00:01+07:00",
 
     akad: {
       title: "Pemberkatan",
