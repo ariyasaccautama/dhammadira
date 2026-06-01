@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { weddingData } from "../../data/wedding";
+import FadeIn from "../FadeIn";
+import CinematicReveal from "../CinematicReveal";
 
 export default function FeaturedMovie() {
   const isWeddingDay =
@@ -9,6 +11,8 @@ export default function FeaturedMovie() {
     );
 
   return (
+  <FadeIn>
+  <CinematicReveal>
     <section className="py-24 px-6">
       <div
         className="
@@ -138,5 +142,7 @@ export default function FeaturedMovie() {
         </div>
       </div>
     </section>
+    </CinematicReveal>
+    </FadeIn>
   );
 }

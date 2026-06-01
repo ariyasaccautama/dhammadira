@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 export default function Dresscode() {
   const colors = [
     {
@@ -23,8 +27,26 @@ export default function Dresscode() {
   ];
 
   return (
-    <section id="dresscode" className="py-24 px-6">
-      <div
+    <section
+      id="dresscode"
+      className="py-24 px-6"
+    >
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 80,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        transition={{
+          duration: 1,
+        }}
         className="
           max-w-5xl
           mx-auto
@@ -33,30 +55,87 @@ export default function Dresscode() {
           border-red-900/30
           rounded-3xl
           p-8
+          overflow-hidden
+          relative
         "
       >
+        {/* Netflix Glow */}
+        <div className="absolute -top-24 -right-24 w-72 h-72 bg-red-600/10 blur-3xl rounded-full" />
+
+        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-red-600/10 blur-3xl rounded-full" />
+
         <p className="tracking-[6px] text-gray-400 mb-8 uppercase">
           Dresscode
         </p>
 
-        <h2 className="text-4xl font-bold mb-8">
+        <h2 className="text-4xl font-black mb-4">
           Earth Tone
         </h2>
 
-        <div className="flex flex-wrap gap-5 mb-8">
-          {colors.map((color) => (
-            <div
+        <p className="text-gray-400 max-w-3xl mb-14">
+          Kami mengundang
+          Bapak/Ibu/Saudara/i untuk
+          mengenakan pakaian bernuansa
+          Earth Tone agar suasana acara
+          semakin hangat, harmonis,
+          dan indah dalam dokumentasi.
+        </p>
+
+        <div className="flex flex-wrap justify-center gap-10">
+
+          {colors.map((color, index) => (
+            <motion.div
               key={color.hex}
+              initial={{
+                opacity: 0,
+                y: 60,
+                scale: 0.7,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.15,
+                duration: 0.8,
+              }}
+              animate={{
+                y: [0, -12],
+              }}
+              whileHover={{
+                scale: 1.15,
+              }}
               className="text-center"
             >
-              <div
+
+              <motion.div
+                transition={{
+                  y: {
+                    repeat: Infinity,
+                    repeatType:
+                      "reverse",
+                    duration:
+                      2 +
+                      index * 0.3,
+                    ease: "easeInOut",
+                  },
+                }}
+                animate={{
+                  boxShadow: [
+                    `0 0 0px ${color.hex}`,
+                    `0 0 30px ${color.hex}`,
+                  ],
+                }}
                 className="
-                  w-20
-                  h-20
+                  w-24
+                  h-24
                   rounded-full
                   border-4
-                  border-red-600
-                  shadow-lg
+                  border-white/20
                 "
                 style={{
                   backgroundColor:
@@ -64,20 +143,16 @@ export default function Dresscode() {
                 }}
               />
 
-              <p className="mt-3 text-sm text-gray-300">
+              <p className="mt-4 font-medium text-gray-300">
                 {color.name}
               </p>
-            </div>
+
+            </motion.div>
           ))}
+
         </div>
 
-        <p className="text-gray-400">
-          Kami mengundang Bapak/Ibu/Saudara/i untuk mengenakan
-          pakaian dengan nuansa Earth
-          Tone agar suasana acara
-          semakin hangat dan selaras.
-        </p>
-      </div>
+      </motion.div>
     </section>
   );
 }

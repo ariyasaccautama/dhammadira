@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { FaInstagram } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 import { weddingData } from "../../data/wedding";
 
@@ -11,7 +14,24 @@ export default function Couple() {
 
         {/* Header */}
 
-        <div className="text-center mb-16">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 50,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.3,
+          }}
+          transition={{
+            duration: 1,
+          }}
+          className="text-center mb-16"
+        >
 
           <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full" />
 
@@ -23,13 +43,34 @@ export default function Couple() {
             Dengan penuh rasa syukur dan bahagia
           </p>
 
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-[1fr_auto_1fr] gap-10 items-center">
 
           {/* Groom */}
 
-          <div
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -150,
+              rotate: -4,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              rotate: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 1.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            whileHover={{
+              y: -8,
+            }}
             className="
               bg-[#141414]
               border
@@ -43,9 +84,14 @@ export default function Couple() {
             "
           >
 
-            <div className="relative w-48 h-48 mx-auto mb-8">
+            <motion.div
+              whileHover={{
+                scale: 1.05,
+              }}
+              className="relative w-48 h-48 mx-auto mb-8"
+            >
 
-              <div className="absolute inset-0 rounded-full bg-red-600/20 blur-2xl" />
+              <div className="absolute inset-0 rounded-full bg-red-600/30 blur-3xl" />
 
               <Image
                 src="/images/groom.png"
@@ -57,10 +103,11 @@ export default function Couple() {
                   border-4
                   border-red-600
                   relative
+                  shadow-[0_0_35px_rgba(220,38,38,0.4)]
                 "
               />
 
-            </div>
+            </motion.div>
 
             <p className="text-red-500 uppercase tracking-[0.3em] text-xs mb-3">
               Groom
@@ -96,29 +143,79 @@ export default function Couple() {
               Instagram
             </a>
 
-          </div>
+          </motion.div>
 
           {/* Heart */}
 
-          <div className="flex justify-center">
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0,
+              rotate: -180,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              rotate: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.3,
+            }}
+            transition={{
+              delay: 0.5,
+              duration: 1,
+              type: "spring",
+            }}
+            className="flex justify-center"
+          >
 
-            <div
+            <motion.div
+              animate={{
+                scale: [1, 1.15, 1],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+              }}
               className="
                 text-5xl
                 md:text-7xl
                 text-red-600
-                animate-pulse
                 select-none
+                drop-shadow-[0_0_20px_rgba(220,38,38,0.8)]
               "
             >
               ❤️
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
 
           {/* Bride */}
 
-          <div
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 150,
+              rotate: 4,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+              rotate: 0,
+            }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            transition={{
+              duration: 1.1,
+              delay: 0.15,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            whileHover={{
+              y: -8,
+            }}
             className="
               bg-[#141414]
               border
@@ -132,9 +229,14 @@ export default function Couple() {
             "
           >
 
-            <div className="relative w-48 h-48 mx-auto mb-8">
+            <motion.div
+              whileHover={{
+                scale: 1.05,
+              }}
+              className="relative w-48 h-48 mx-auto mb-8"
+            >
 
-              <div className="absolute inset-0 rounded-full bg-red-600/20 blur-2xl" />
+              <div className="absolute inset-0 rounded-full bg-red-600/30 blur-3xl" />
 
               <Image
                 src="/images/bridge.png"
@@ -146,10 +248,11 @@ export default function Couple() {
                   border-4
                   border-red-600
                   relative
+                  shadow-[0_0_35px_rgba(220,38,38,0.4)]
                 "
               />
 
-            </div>
+            </motion.div>
 
             <p className="text-red-500 uppercase tracking-[0.3em] text-xs mb-3">
               Bride
@@ -185,7 +288,7 @@ export default function Couple() {
               Instagram
             </a>
 
-          </div>
+          </motion.div>
 
         </div>
 

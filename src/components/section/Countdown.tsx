@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
+import FadeIn from "../FadeIn";
+import CinematicReveal from "../CinematicReveal";
 
 import { weddingData } from "../../data/wedding";
 
@@ -154,6 +156,8 @@ export default function Countdown() {
         />
       )}
 
+      <FadeIn>
+      <CinematicReveal>
       <section className="relative overflow-hidden py-28 px-6 text-center">
 
         {/* Background Glow */}
@@ -249,6 +253,8 @@ export default function Countdown() {
         </div>
 
       </section>
+      </CinematicReveal>
+      </FadeIn>
     </>
   );
 }

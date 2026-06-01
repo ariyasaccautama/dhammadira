@@ -1,13 +1,18 @@
 import { weddingData } from "../../data/wedding";
+import FadeIn from "../FadeIn";
+import CinematicReveal from "../CinematicReveal";
+
 
 export default function Event() {
   return (
+  <FadeIn>
+  <CinematicReveal>
     <section
       id="event"
       className="py-24 px-6"
     >
       <h2 className="text-4xl font-bold text-center mb-12">
-        Jadwal Acara
+        Lokasi & Jadwal Acara
       </h2>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -266,5 +271,7 @@ export default function Event() {
 
       </div>
     </section>
+  </CinematicReveal>
+  </FadeIn>
   );
 }
