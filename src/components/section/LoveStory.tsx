@@ -38,7 +38,7 @@ export default function LoveStory() {
   return (
     <section
       id="love-story"
-      className="py-24 px-6"
+      className="py-24 px-6 overflow-hidden"
     >
       {/* Header */}
 
@@ -101,8 +101,8 @@ export default function LoveStory() {
                 initial={{
                   opacity: 0,
                   x: isLeft
-                    ? -100
-                    : 100,
+                    ? -40
+                    : 40,
                 }}
                 whileInView={{
                   opacity: 1,
@@ -113,7 +113,7 @@ export default function LoveStory() {
                   amount: 0.2,
                 }}
                 transition={{
-                  duration: 1,
+                  duration: 0.8,
                   ease: [
                     0.22,
                     1,

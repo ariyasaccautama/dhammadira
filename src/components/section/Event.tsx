@@ -12,7 +12,7 @@ export default function Event() {
       <CinematicReveal>
         <section
           id="event"
-          className="py-24 px-6"
+          className="py-24 px-6 overflow-hidden"
         >
           <motion.h2
             initial={{
@@ -41,7 +41,7 @@ export default function Event() {
             <motion.div
               initial={{
                 opacity: 0,
-                x: -100,
+                x: -40,
               }}
               whileInView={{
                 opacity: 1,
@@ -103,8 +103,6 @@ export default function Event() {
                   {weddingData.event.akad.location.venue}
                 </h3>
 
-                {/* Kalender */}
-
                 <div className="flex items-center gap-4 mb-5">
 
                   <div
@@ -160,9 +158,7 @@ export default function Event() {
                 </p>
 
                 <a
-                  href={
-                    weddingData.event.akad.location.maps
-                  }
+                  href={weddingData.event.akad.location.maps}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
@@ -190,7 +186,7 @@ export default function Event() {
             <motion.div
               initial={{
                 opacity: 0,
-                x: 100,
+                x: 40,
               }}
               whileInView={{
                 opacity: 1,
@@ -252,8 +248,6 @@ export default function Event() {
                   {weddingData.event.reception.location.venue}
                 </h3>
 
-                {/* Kalender */}
-
                 <div className="flex items-center gap-4 mb-5">
 
                   <div
@@ -309,9 +303,7 @@ export default function Event() {
                 </p>
 
                 <a
-                  href={
-                    weddingData.event.reception.location.maps
-                  }
+                  href={weddingData.event.reception.location.maps}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
