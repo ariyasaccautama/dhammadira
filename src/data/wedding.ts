@@ -3,7 +3,7 @@ export const weddingData = {
     name: "Prasetya Dhamma Permana Putra",
 
     parent:
-      "Putra Pertama dari Bapak Tomo, S.Pd, M.Pd\n& Ibu Rusmiyati, S.Ag, M.Ag",
+      "Putra Pertama dari Bapak Tomo, S.Pd., M.Pd.\n& Ibu Rusmiyati, S.Ag, M.Pd.B.",
 
     instagram:
       "https://www.instagram.com/prasdham/",
@@ -13,7 +13,7 @@ export const weddingData = {
     name: "Prisilia Indira Octavia",
 
     parent:
-      "Putri Pertama dari Bapak Drs. Supriyoto Hadisardjono, S.E, M.Ec.Dev\n& Ibu Indrayani Sri Sulistyowati, S.H, M.H",
+      "Putri Pertama dari Bapak Drs. Supriyoto Hadisardjono, S.E., M.Ec.Dev\n& Ibu Indrayani Sri Sulistyowati, S.H., M.H.",
 
     instagram:
       "https://www.instagram.com/dirasoebroto/",
