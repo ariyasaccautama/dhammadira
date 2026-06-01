@@ -4,7 +4,7 @@ export default function Location() {
   return (
     <section className="py-24 px-6">
       <h2 className="text-4xl font-bold text-center mb-12">
-        Lokasi Acara
+        Jadwal & Lokasi Acara
       </h2>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">

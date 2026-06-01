@@ -1,75 +1,118 @@
+import Image from "next/image";
+
 export default function LoveStory() {
   const stories = [
     {
-      title: "Awal Bertemu",
+      title: "EPS 1: Awal Bertemu",
       year: "2020",
+      image: "/images/story1.jpg",
       description:
-        "Isi cerita awal bertemu di sini...",
+        "Kisah kami dimulai dari sebuah pertemuan yang sederhana namun berkesan.",
     },
     {
-      title: "Mulai Dekat",
+      title: "EPS 2: Mulai Dekat",
       year: "2021",
+      image: "/images/story1.jpg",
       description:
-        "Isi cerita mulai dekat di sini...",
+        "Seiring berjalannya waktu, kami semakin mengenal dan memahami satu sama lain.",
     },
     {
-      title: "Lamaran",
+      title: "EPS 3: Lamaran",
       year: "2025",
+      image: "/images/story1.jpg",
       description:
-        "Isi cerita lamaran di sini...",
+        "Dengan penuh keyakinan dan cinta, kami memutuskan melangkah ke jenjang yang lebih serius.",
     },
     {
-      title: "Menikah",
+      title: "EPS: 4 Menikah",
       year: "2026",
+      image: "/images/story1.jpg",
       description:
-        "Perjalanan menuju hari bahagia.",
+        "Perjalanan kami bermuara pada hari bahagia yang akan kami rayakan bersama keluarga dan sahabat tercinta.",
     },
   ];
 
   return (
-    <section id="love-story" className="py-24 px-6">
-      <h2 className="text-4xl font-bold mb-10 text-center">
-        Love Story
-      </h2>
+    <section
+      id="love-story"
+      className="py-24 px-6"
+    >
+      <div className="text-center mb-16">
 
-      <div className="grid md:grid-cols-4 gap-4">
+        <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full" />
+
+        <h2 className="text-4xl md:text-5xl font-black">
+          Love Story
+        </h2>
+
+        <p className="text-gray-400 mt-4">
+          Perjalanan singkat menuju hari bahagia
+        </p>
+
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+
         {stories.map((story) => (
           <div
             key={story.title}
             className="
-            bg-[#141414]
-            border
-            border-red-900/30
-            hover:border-red-600
-            hover:scale-105
-            transition
-            duration-300
-            rounded-xl
-            p-5
-          "
+              group
+              bg-[#141414]
+              border
+              border-red-900/30
+              hover:border-red-600
+              rounded-3xl
+              overflow-hidden
+              transition-all
+              duration-300
+              hover:-translate-y-2
+            "
           >
-            <div className="h-40 bg-zinc-800 rounded-lg mb-4 overflow-hidden">
-            <img
-              src="/images/story1.jpg"
-              alt={story.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
 
-            <p className="text-red-500 text-sm">
-              {story.year}
-            </p>
+            <div className="relative h-64 overflow-hidden">
 
-            <h3 className="font-bold text-xl mt-2">
-              {story.title}
-            </h3>
+              <Image
+                src={story.image}
+                alt={story.title}
+                fill
+                className="
+                  object-cover
+                  transition-transform
+                  duration-500
+                  group-hover:scale-110
+                "
+              />
 
-            <p className="text-gray-400 text-sm mt-2">
-              {story.description}
-            </p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+
+              <div className="absolute bottom-4 left-4">
+
+                <span className="bg-red-600 px-3 py-1 rounded-full text-xs font-bold">
+                  {story.year}
+                </span>
+
+              </div>
+
+            </div>
+
+            <div className="p-6">
+
+              <h3 className="text-xl font-bold mb-3">
+                {story.title}
+              </h3>
+
+              <p className="text-gray-400 text-sm leading-relaxed">
+                {story.description}
+              </p>
+
+            </div>
+
           </div>
         ))}
+
       </div>
+
     </section>
   );
 }

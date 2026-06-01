@@ -72,8 +72,7 @@ export default function Dresscode() {
         </div>
 
         <p className="text-gray-400">
-          Kami mengundang Bapak/Ibu/
-          Saudara/i untuk mengenakan
+          Kami mengundang Bapak/Ibu/Saudara/i untuk mengenakan
           pakaian dengan nuansa Earth
           Tone agar suasana acara
           semakin hangat dan selaras.
