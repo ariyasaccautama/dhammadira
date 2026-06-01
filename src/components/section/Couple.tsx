@@ -210,7 +210,6 @@ export default function Couple() {
             }}
             transition={{
               duration: 1.1,
-              delay: 0.15,
               ease: [0.22, 1, 0.36, 1],
             }}
             whileHover={{
