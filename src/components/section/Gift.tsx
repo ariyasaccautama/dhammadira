@@ -37,7 +37,7 @@ export default function Gift() {
         Anda dapat mengirimkan hadiah melalui:
       </p>
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
 
         {/* MANDIRI */}
         <div
@@ -65,15 +65,15 @@ export default function Gift() {
                   right-5
                   bg-white/50
                   backdrop-blur-md
-                  px-3
-                  py-2
+                  px-2.5
+                  py-1.5
                   rounded-xl
                 "
               >
                 <img
                   src="/images/bank-mandiri.png"
                   alt="Mandiri"
-                  className="h-10 w-auto"
+                  className="h-7 md:h-10 w-auto"
                 />
               </div>
 
@@ -85,7 +85,7 @@ export default function Gift() {
             {weddingData.gift.groom.bank}
           </h3>
 
-          <p className="text-4xl font-black text-yellow-400 mt-6 tracking-wider">
+          <p className="text-[38px] md:text-5xl font-black text-yellow-400 mt-5 tracking-wide break-all">
             {weddingData.gift.groom.account}
           </p>
 
@@ -146,15 +146,15 @@ export default function Gift() {
                   right-5
                   bg-white/50
                   backdrop-blur-md
-                  px-3
-                  py-2
+                  px-2.5
+                  py-1.5
                   rounded-xl
                 "
               >
                 <img
                   src="/images/bank-bca.png"
                   alt="BCA"
-                  className="h-10 w-auto"
+                  className="h-7 md:h-10 w-auto"
                 />
               </div>
 
@@ -166,7 +166,7 @@ export default function Gift() {
             {weddingData.gift.bride.bank}
           </h3>
 
-          <p className="text-4xl font-black mt-6 tracking-wider">
+          <p className="text-[38px] md:text-5xl font-black mt-5 tracking-wide break-all">
             {weddingData.gift.bride.account}
           </p>
 
