@@ -73,15 +73,8 @@ export default function Closing() {
           </div>
 
           <h3 className="text-2xl font-bold mb-3">
-            Jangan Lupa Dresscode Ya!
+            Jangan Lupa Dresscode Ya!😊
           </h3>
-
-          <p className="text-gray-300 mb-6">
-            Kami mengundang seluruh tamu untuk
-            mengenakan warna earth-tone agar
-            suasana acara semakin hangat,
-            harmonis, dan indah dalam dokumentasi.
-          </p>
 
           <button
             onClick={scrollToDresscode}
