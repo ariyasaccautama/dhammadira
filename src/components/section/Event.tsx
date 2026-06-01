@@ -6,49 +6,49 @@ import { weddingData } from "../../data/wedding";
 import FadeIn from "../FadeIn";
 import CinematicReveal from "../CinematicReveal";
 
-const downloadCalendar = (
-  title: string,
-  location: string,
-  startDate: string,
-  endDate: string,
-  description: string
-) => {
-  const icsContent = `BEGIN:VCALENDAR
-VERSION:2.0
-BEGIN:VEVENT
-SUMMARY:${title}
-DESCRIPTION:${description}
-LOCATION:${location}
-DTSTART:${startDate}
-DTEND:${endDate}
-END:VEVENT
-END:VCALENDAR`;
+// const downloadCalendar = (
+//   title: string,
+//   location: string,
+//   startDate: string,
+//   endDate: string,
+//   description: string
+// ) => {
+//   const icsContent = `BEGIN:VCALENDAR
+// VERSION:2.0
+// BEGIN:VEVENT
+// SUMMARY:${title}
+// DESCRIPTION:${description}
+// LOCATION:${location}
+// DTSTART:${startDate}
+// DTEND:${endDate}
+// END:VEVENT
+// END:VCALENDAR`;
 
-  const blob = new Blob(
-    [icsContent],
-    {
-      type: "text/calendar",
-    }
-  );
+//   const blob = new Blob(
+//     [icsContent],
+//     {
+//       type: "text/calendar",
+//     }
+//   );
 
-  const url =
-    URL.createObjectURL(blob);
+//   const url =
+//     URL.createObjectURL(blob);
 
-  const link =
-    document.createElement("a");
+//   const link =
+//     document.createElement("a");
 
-  link.href = url;
-  link.download =
-    "Wedding-Dhamma-Dira.ics";
+//   link.href = url;
+//   link.download =
+//     "Wedding-Dhamma-Dira.ics";
 
-  document.body.appendChild(link);
+//   document.body.appendChild(link);
 
-  link.click();
+//   link.click();
 
-  document.body.removeChild(link);
+//   document.body.removeChild(link);
 
-  URL.revokeObjectURL(url);
-};
+//   URL.revokeObjectURL(url);
+// };
 
 export default function Event() {
   return (
@@ -226,16 +226,16 @@ export default function Event() {
                   📍 Lokasi
                 </a>
 
-                <button
-                  onClick={() =>
-                    downloadCalendar(
-                      "Pemberkatan Dhamma & Dira",
-                      "STI Vihāra Vipassanā Kusalacitta",
-                      "20260808T060000Z",
-                      "20260808T080000Z",
-                      "Pemberkatan Pernikahan Dhamma & Dira"
-                    )
-                  }
+                <a
+                  href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+                    "Pemberkatan Dhamma & Dira"
+                  )}&dates=20260808T060000Z/20260808T080000Z&details=${encodeURIComponent(
+                    "Pemberkatan Pernikahan Dhamma & Dira"
+                  )}&location=${encodeURIComponent(
+                    "STI Vihāra Vipassanā Kusalacitta"
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="
                     flex-1
                     flex
@@ -256,7 +256,7 @@ export default function Event() {
                   "
                 >
                   📅 Kalender
-                </button>
+                </a>
 
               </div>
 
@@ -409,16 +409,16 @@ export default function Event() {
                   📍 Lokasi
                 </a>
 
-                <button
-                  onClick={() =>
-                    downloadCalendar(
-                      "Resepsi Dhamma & Dira",
-                      "Omah Kebon Bekasi",
-                      "20260808T120000Z",
-                      "20260808T140000Z",
-                      "Resepsi Pernikahan Dhamma & Dira"
-                    )
-                  }
+                <a
+                  href={`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+                    "Resepsi Dhamma & Dira"
+                  )}&dates=20260808T120000Z/20260808T140000Z&details=${encodeURIComponent(
+                    "Resepsi Pernikahan Dhamma & Dira"
+                  )}&location=${encodeURIComponent(
+                    "Omah Kebon Bekasi"
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="
                     flex-1
                     flex
@@ -439,7 +439,7 @@ export default function Event() {
                   "
                 >
                   📅 Kalender
-                </button>
+                </a>
 
               </div>
 
