@@ -95,7 +95,7 @@ export const weddingData = {
       account: "999999999",
 
       holder:
-        "Prisilia Indira Oktavia",
+        "Prisilia Indira Octavia",
     },
   },
 
