@@ -58,13 +58,24 @@ export default function Gift() {
             duration-300
           "
         >
-          <div className="absolute top-5 right-5">
-            <img
-              src="/images/bank-mandiri.png"
-              alt="Mandiri"
-              className="h-10 object-contain"
-            />
-          </div>
+              <div
+                className="
+                  absolute
+                  top-5
+                  right-5
+                  bg-white/50
+                  backdrop-blur-md
+                  px-3
+                  py-2
+                  rounded-xl
+                "
+              >
+                <img
+                  src="/images/bank-mandiri.png"
+                  alt="Mandiri"
+                  className="h-10 w-auto"
+                />
+              </div>
 
           <p className="text-sm text-gray-400 uppercase tracking-widest">
             Bank Account
@@ -128,13 +139,24 @@ export default function Gift() {
             duration-300
           "
         >
-          <div className="absolute top-5 right-5">
-            <img
-              src="/images/bank-bca.png"
-              alt="BCA"
-              className="h-10 object-contain"
-            />
-          </div>
+              <div
+                className="
+                  absolute
+                  top-5
+                  right-5
+                  bg-white/50
+                  backdrop-blur-md
+                  px-3
+                  py-2
+                  rounded-xl
+                "
+              >
+                <img
+                  src="/images/bank-bca.png"
+                  alt="BCA"
+                  className="h-10 w-auto"
+                />
+              </div>
 
           <p className="text-sm text-blue-200 uppercase tracking-widest">
             Bank Account
