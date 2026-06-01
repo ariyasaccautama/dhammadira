@@ -6,6 +6,50 @@ import { weddingData } from "../../data/wedding";
 import FadeIn from "../FadeIn";
 import CinematicReveal from "../CinematicReveal";
 
+const downloadCalendar = (
+  title: string,
+  location: string,
+  startDate: string,
+  endDate: string,
+  description: string
+) => {
+  const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:${title}
+DESCRIPTION:${description}
+LOCATION:${location}
+DTSTART:${startDate}
+DTEND:${endDate}
+END:VEVENT
+END:VCALENDAR`;
+
+  const blob = new Blob(
+    [icsContent],
+    {
+      type: "text/calendar",
+    }
+  );
+
+  const url =
+    URL.createObjectURL(blob);
+
+  const link =
+    document.createElement("a");
+
+  link.href = url;
+  link.download =
+    "Wedding-Dhamma-Dira.ics";
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  document.body.removeChild(link);
+
+  URL.revokeObjectURL(url);
+};
+
 export default function Event() {
   return (
     <FadeIn>
@@ -158,25 +202,63 @@ export default function Event() {
                   {weddingData.event.akad.location.address}
                 </p>
 
+                <div className="flex gap-3 mt-4">
+
                 <a
                   href={weddingData.event.akad.location.maps}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    w-fit
+                    flex-1
+                    flex
+                    items-center
+                    justify-center
+                    gap-2
                     bg-red-600
                     hover:bg-red-700
-                    hover:scale-105
-                    px-6
-                    py-3
-                    rounded-lg
+                    py-4
+                    rounded-xl
                     font-bold
                     transition-all
                     duration-300
                   "
                 >
-                  📍 Lihat Lokasi
+                  📍 Lokasi
                 </a>
+
+                <button
+                  onClick={() =>
+                    downloadCalendar(
+                      "Pemberkatan Dhamma & Dira",
+                      weddingData.event.akad.location.address,
+                      "20260808T060000Z",
+                      "20260808T080000Z",
+                      "Pemberkatan Pernikahan Dhamma & Dira"
+                    )
+                  }
+                  className="
+                    flex-1
+                    flex
+                    items-center
+                    justify-center
+                    gap-2
+                    bg-white/10
+                    backdrop-blur
+                    border
+                    border-white/10
+                    hover:bg-white/20
+                    hover:border-red-500/40
+                    py-4
+                    rounded-xl
+                    font-bold
+                    transition-all
+                    duration-300
+                  "
+                >
+                  📅 Tambah ke Kalender
+                </button>
+
+              </div>
 
               </div>
 
@@ -303,25 +385,63 @@ export default function Event() {
                   {weddingData.event.reception.location.address}
                 </p>
 
+                <div className="flex gap-3 mt-4">
+
                 <a
                   href={weddingData.event.reception.location.maps}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
-                    w-fit
+                    flex-1
+                    flex
+                    items-center
+                    justify-center
+                    gap-2
                     bg-red-600
                     hover:bg-red-700
-                    hover:scale-105
-                    px-6
-                    py-3
-                    rounded-lg
+                    py-4
+                    rounded-xl
                     font-bold
                     transition-all
                     duration-300
                   "
                 >
-                  📍 Lihat Lokasi
+                  📍 Lokasi
                 </a>
+
+                <button
+                  onClick={() =>
+                    downloadCalendar(
+                      "Resepsi Dhamma & Dira",
+                      weddingData.event.reception.location.address,
+                      "20260808T080000Z",
+                      "20260808T120000Z",
+                      "Resepsi Pernikahan Dhamma & Dira"
+                    )
+                  }
+                  className="
+                    flex-1
+                    flex
+                    items-center
+                    justify-center
+                    gap-2
+                    bg-white/10
+                    backdrop-blur
+                    border
+                    border-white/10
+                    hover:bg-white/20
+                    hover:border-red-500/40
+                    py-4
+                    rounded-xl
+                    font-bold
+                    transition-all
+                    duration-300
+                  "
+                >
+                  📅 Tambah ke Kalender
+                </button>
+
+              </div>
 
               </div>
 
