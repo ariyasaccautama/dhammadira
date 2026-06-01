@@ -213,7 +213,7 @@ export default function Hero() {
                 transition
               "
             >
-              ⏵ Kisah Kami
+              ▷ Kisah Kami
             </button>
 
             <button
