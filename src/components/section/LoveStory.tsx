@@ -66,7 +66,7 @@ export default function LoveStory() {
         </h2>
 
         <p className="text-gray-400 mt-4">
-          Perjalanan singkat menuju hari bahagia
+          Perjalanan singkat menuju hari bahagia ❤️
         </p>
       </motion.div>
 

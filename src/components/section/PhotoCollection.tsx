@@ -73,8 +73,7 @@ export default function PhotoCollection() {
             </h2>
 
             <p className="text-gray-400 mt-4">
-              Perjalanan singkat menuju hari
-              bahagia kami ❤️
+              Saksikan di hari bahagia kami!
             </p>
 
           </motion.div>
