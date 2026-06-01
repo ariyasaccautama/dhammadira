@@ -130,7 +130,7 @@ export default function Hero() {
             </div>
 
             <div className="text-3xl md:text-5xl font-bold">
-              Oktavia
+              Octavia
             </div>
           </div>
 
