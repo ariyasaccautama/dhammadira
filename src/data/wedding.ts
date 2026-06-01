@@ -10,7 +10,7 @@ export const weddingData = {
   },
 
   bride: {
-    name: "Prisilia Indira Oktavia",
+    name: "Prisilia Indira Octavia",
 
     parent:
       "Putri Pertama dari Bapak Drs. Supriyoto Hadisardjono, S.E, M.Ec.Dev & Ibu Indrayani Sri Sulistyowati, S.H, M.H",
