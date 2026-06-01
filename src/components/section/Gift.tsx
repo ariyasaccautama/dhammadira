@@ -24,6 +24,9 @@ export default function Gift() {
 
   return (
     <section className="py-24 px-6">
+
+      <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full" />
+      
       <h2 className="text-4xl font-bold text-center mb-3">
         Wedding Gift
       </h2>

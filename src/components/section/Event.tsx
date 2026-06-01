@@ -14,6 +14,7 @@ export default function Event() {
           id="event"
           className="py-24 px-6 overflow-hidden"
         >
+          <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full" />
           <motion.h2
             initial={{
               opacity: 0,

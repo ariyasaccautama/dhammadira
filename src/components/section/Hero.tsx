@@ -95,18 +95,19 @@ export default function Hero() {
             The Wedding Of
           </p>
 
-          <h1
-            className="
-              text-4xl
-              sm:text-5xl
-              md:text-7xl
-              lg:text-8xl
-              font-black
-              leading-none
-            "
-          >
-            {weddingData.groom.name}
-          </h1>
+          <div className="leading-none">
+            <div className="text-3xl md:text-5xl font-bold">
+              Prasetya
+            </div>
+
+            <div className="text-6xl md:text-9xl font-black text-white tracking-tight drop-shadow-2xl">
+              DHAMMA
+            </div>
+
+            <div className="text-3xl md:text-5xl font-bold">
+              Permana Putra
+            </div>
+          </div>
 
           <div
             className="
@@ -119,18 +120,19 @@ export default function Hero() {
             &
           </div>
 
-          <h1
-            className="
-              text-4xl
-              sm:text-5xl
-              md:text-7xl
-              lg:text-8xl
-              font-black
-              leading-none
-            "
-          >
-            {weddingData.bride.name}
-          </h1>
+          <div className="leading-none mt-4">
+            <div className="text-3xl md:text-5xl font-bold">
+              Prisilia
+            </div>
+
+            <div className="text-6xl md:text-9xl font-black text-white tracking-tight drop-shadow-2xl">
+              INDIRA
+            </div>
+
+            <div className="text-3xl md:text-5xl font-bold">
+              Oktavia
+            </div>
+          </div>
 
           <div
             className="
@@ -174,11 +176,11 @@ export default function Hero() {
             "
           >
             <span className="bg-zinc-700 text-gray-200 px-5 py-2 rounded-full font-semibold">
-              #Wedding
+              #DIRAyakanDHAMMA
             </span>
 
             <span className="bg-zinc-700 text-gray-200 px-5 py-2 rounded-full font-semibold">
-              #DhammaDira
+              #TheBestforTheLast
             </span>
 
             <span className="bg-zinc-700 text-gray-200 px-5 py-2 rounded-full font-semibold">
@@ -186,7 +188,7 @@ export default function Hero() {
             </span>
 
             <span className="bg-zinc-700 text-gray-200 px-5 py-2 rounded-full font-semibold">
-              #Documenter
+              #DhammaDira
             </span>
           </div>
 

@@ -200,6 +200,8 @@ export default function Countdown() {
 
           {!isWeddingDay && (
             <div className="mb-14">
+              
+              <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full" />
 
             <h2
               className="
@@ -210,7 +212,7 @@ export default function Countdown() {
                 text-white
               "
             >
-              MENUJU
+              COUNT ON
             </h2>
 
             <h3
@@ -223,7 +225,7 @@ export default function Countdown() {
                 text-red-600
               "
             >
-              HARI BAHAGIA
+              SPECIAL DAYS
             </h3>
 
             <div
