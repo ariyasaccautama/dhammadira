@@ -269,7 +269,7 @@ export default function RSVP({
           <div className="mb-5">
 
             <p className="text-gray-400 mb-3">
-              Status Kehadiran
+              Pilih Status Kehadiran
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
