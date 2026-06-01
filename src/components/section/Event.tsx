@@ -230,9 +230,9 @@ export default function Event() {
                   onClick={() =>
                     downloadCalendar(
                       "Pemberkatan Dhamma & Dira",
-                      weddingData.event.akad.location.address,
+                      "STI Vihāra Vipassanā Kusalacitta",
+                      "20260808T060000Z",
                       "20260808T080000Z",
-                      "20260808T100000Z",
                       "Pemberkatan Pernikahan Dhamma & Dira"
                     )
                   }
@@ -413,9 +413,9 @@ export default function Event() {
                   onClick={() =>
                     downloadCalendar(
                       "Resepsi Dhamma & Dira",
-                      weddingData.event.reception.location.address,
-                      "20260808T080000Z",
+                      "Omah Kebon Bekasi",
                       "20260808T120000Z",
+                      "20260808T140000Z",
                       "Resepsi Pernikahan Dhamma & Dira"
                     )
                   }
