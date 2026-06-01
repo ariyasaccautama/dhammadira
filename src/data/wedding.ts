@@ -83,7 +83,7 @@ export const weddingData = {
     groom: {
       bank: "Mandiri",
 
-      account: "8888888888",
+      account: "1670001464584",
 
       holder:
         "Prasetya Dhamma Permana Putra",
@@ -92,7 +92,7 @@ export const weddingData = {
     bride: {
       bank: "BCA",
 
-      account: "999999999",
+      account: "8810435144",
 
       holder:
         "Prisilia Indira Octavia",
