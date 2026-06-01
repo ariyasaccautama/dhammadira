@@ -231,8 +231,8 @@ export default function Event() {
                     downloadCalendar(
                       "Pemberkatan Dhamma & Dira",
                       weddingData.event.akad.location.address,
-                      "20260808T060000Z",
                       "20260808T080000Z",
+                      "20260808T100000Z",
                       "Pemberkatan Pernikahan Dhamma & Dira"
                     )
                   }
