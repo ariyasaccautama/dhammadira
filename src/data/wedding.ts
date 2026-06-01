@@ -33,7 +33,7 @@ export const weddingData = {
       "Bhavatu sabba maṅgalaṃ, rakkhantu sabba devatā, sabbe buddhānubhāvena, sadā sotthī bhavantu te.",
 
     image:
-      "/images/movie-cover.jpg",
+      "/images/FeaturedMovie.jpg",
   },
 
   event: {
