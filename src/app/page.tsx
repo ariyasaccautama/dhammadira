@@ -96,16 +96,16 @@ function HomeContent() {
 
         <Event />
 
+        <RSVP
+          guestId={guestId}
+          guestName={guestName}
+        />
+
         <LoveStory />
 
         <PhotoCollection />
 
         {/* <Location /> */}
-
-        <RSVP
-          guestId={guestId}
-          guestName={guestName}
-        />
 
         <Gift />
 
