@@ -27,28 +27,67 @@ export default function Hero() {
     new Date() >= weddingDate;
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section
+      className="
+        relative
+        min-h-[100svh]
+        overflow-hidden
+      "
+    >
+      {/* Background */}
 
-      {/* Background Image */}
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage:"url('/images/cover.jpg')",
-            // "url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070')",
+          backgroundImage:
+            "url('/images/cover.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       />
 
-      {/* Netflix Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/40" />
+      {/* Overlay */}
+
+      <div
+        className="
+          absolute
+          inset-0
+          bg-gradient-to-t
+          from-black
+          via-black/60
+          to-black/40
+        "
+      />
 
       {/* Content */}
-      <div className="relative z-10 min-h-screen flex items-center">
 
-        <div className="max-w-4xl px-8 md:px-20">
+      <div
+        className="
+          relative
+          z-10
+          min-h-[100svh]
+          flex
+          items-center
+        "
+      >
+        <div
+          className="
+            w-full
+            max-w-6xl
+            px-8
+            md:px-20
+          "
+        >
 
-          <p className="text-red-600 font-bold tracking-[5px] mb-4">
+          <p
+            className="
+              text-red-600
+              font-bold
+              tracking-[5px]
+              mb-4
+              text-sm
+            "
+          >
             NITFLIX ORIGINAL
           </p>
 
@@ -56,20 +95,52 @@ export default function Hero() {
             The Wedding Of
           </p>
 
-          <h1 className="text-5xl md:text-8xl font-black leading-none">
+          <h1
+            className="
+              text-4xl
+              sm:text-5xl
+              md:text-7xl
+              lg:text-8xl
+              font-black
+              leading-none
+            "
+          >
             {weddingData.groom.name}
           </h1>
 
-          <div className="text-4xl md:text-6xl font-black my-4">
+          <div
+            className="
+              text-3xl
+              md:text-5xl
+              font-black
+              my-4
+            "
+          >
             &
           </div>
 
-          <h1 className="text-5xl md:text-8xl font-black leading-none">
+          <h1
+            className="
+              text-4xl
+              sm:text-5xl
+              md:text-7xl
+              lg:text-8xl
+              font-black
+              leading-none
+            "
+          >
             {weddingData.bride.name}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-3 mt-6">
-
+          <div
+            className="
+              flex
+              flex-wrap
+              items-center
+              gap-3
+              mt-6
+            "
+          >
             <span
               className={`
                 px-6
@@ -89,14 +160,19 @@ export default function Hero() {
                 : "Coming Soon"}
             </span>
 
-            <span className="text-gray-300 text-lg">
+            <span className="text-gray-300 text-base md:text-lg">
               • {weddingData.event.akad.date}
             </span>
-
           </div>
 
-          <div className="flex flex-wrap gap-3 mt-8">
-
+          <div
+            className="
+              flex
+              flex-wrap
+              gap-3
+              mt-8
+            "
+          >
             <span className="bg-zinc-700 text-gray-200 px-5 py-2 rounded-full font-semibold">
               #Wedding
             </span>
@@ -112,11 +188,16 @@ export default function Hero() {
             <span className="bg-zinc-700 text-gray-200 px-5 py-2 rounded-full font-semibold">
               #Documenter
             </span>
-
           </div>
 
-          <div className="flex flex-wrap gap-4 mt-8">
-
+          <div
+            className="
+              flex
+              flex-wrap
+              gap-4
+              mt-10
+            "
+          >
             <button
               onClick={scrollToLoveStory}
               className="
@@ -148,13 +229,10 @@ export default function Hero() {
             >
               ⓘ Detail Acara
             </button>
-
           </div>
 
         </div>
-
       </div>
-
     </section>
   );
 }

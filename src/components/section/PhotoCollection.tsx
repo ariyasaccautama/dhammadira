@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 import { X } from "lucide-react";
 
@@ -45,7 +46,25 @@ export default function PhotoCollection() {
 
         <div className="max-w-7xl mx-auto">
 
-          <div className="text-center mb-14">
+          {/* Header */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+            className="text-center mb-14"
+          >
 
             <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full" />
 
@@ -58,25 +77,65 @@ export default function PhotoCollection() {
               bahagia kami ❤️
             </p>
 
-          </div>
+          </motion.div>
+
+          {/* Gallery */}
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
 
             {weddingData.favoriteMoments.map(
               (photo, index) => (
-                <div
+                <motion.div
                   key={index}
+                  initial={{
+                    opacity: 0,
+                    y: 60,
+                    scale: 0.9,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                  }}
+                  viewport={{
+                    once: true,
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    delay:
+                      index * 0.1,
+                  }}
                   onClick={() =>
                     setSelectedPhoto(
                       photo
                     )
                   }
-                  className="group relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-300 hover:scale-105 hover:z-10"
+                  className="
+                    group
+                    relative
+                    overflow-hidden
+                    rounded-3xl
+                    cursor-pointer
+                  "
                 >
 
                   {/* Badge */}
 
-                  <div className="absolute top-4 left-4 z-20 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  <div
+                    className="
+                      absolute
+                      top-4
+                      left-4
+                      z-20
+                      bg-red-600
+                      text-white
+                      text-xs
+                      font-bold
+                      px-3
+                      py-1
+                      rounded-full
+                    "
+                  >
                     {photo.badge}
                   </div>
 
@@ -88,16 +147,61 @@ export default function PhotoCollection() {
                       src={photo.image}
                       alt={photo.title}
                       fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="
+                        object-cover
+                        transition-all
+                        duration-700
+                        group-hover:scale-110
+                      "
                     />
 
                   </div>
 
                   {/* Overlay */}
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      bg-gradient-to-t
+                      from-black
+                      via-black/30
+                      to-transparent
+                    "
+                  />
 
-                </div>
+                  {/* Hover Glow */}
+
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      border-2
+                      border-transparent
+                      group-hover:border-red-600
+                      rounded-3xl
+                      transition
+                      duration-300
+                    "
+                  />
+
+                  {/* Title */}
+
+                  <div className="absolute bottom-4 left-4 z-20">
+
+                    <h3
+                      className="
+                        text-lg
+                        md:text-xl
+                        font-bold
+                      "
+                    >
+                      {photo.title}
+                    </h3>
+
+                  </div>
+
+                </motion.div>
               )
             )}
 
@@ -107,66 +211,169 @@ export default function PhotoCollection() {
 
       </section>
 
-      {/* Fullscreen Modal */}
+      {/* MODAL */}
 
-      {selectedPhoto && (
-        <div
-          onClick={() =>
-            setSelectedPhoto(null)
-          }
-          className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 animate-in fade-in duration-300"
-        >
+      <AnimatePresence>
 
-          {/* Close Button */}
+        {selectedPhoto && (
 
-          <button
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
             onClick={() =>
               setSelectedPhoto(null)
             }
-            className="absolute top-5 right-5 z-50 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full p-3 transition"
+            className="
+              fixed
+              inset-0
+              z-[9999]
+              bg-black/95
+              backdrop-blur-md
+              flex
+              items-center
+              justify-center
+              p-4
+            "
           >
-            <X size={28} />
-          </button>
 
-          {/* Content */}
+            {/* Close */}
 
-          <div
-            onClick={(e) =>
-              e.stopPropagation()
-            }
-            className="relative max-w-6xl w-full"
-          >
+            <button
+              onClick={() =>
+                setSelectedPhoto(null)
+              }
+              className="
+                absolute
+                top-5
+                right-5
+                z-50
+                bg-white/10
+                hover:bg-white/20
+                rounded-full
+                p-3
+                transition
+              "
+            >
+              <X size={28} />
+            </button>
 
-            <div className="relative w-full aspect-[3/2] md:aspect-[16/9] rounded-3xl overflow-hidden">
+            {/* Content */}
 
-              <Image
-                src={
-                  selectedPhoto.image
-                }
-                alt={
-                  selectedPhoto.title
-                }
-                fill
-                priority
-                className="object-contain bg-black"
-              />
+            <motion.div
+              initial={{
+                scale: 0.8,
+                opacity: 0,
+              }}
+              animate={{
+                scale: 1,
+                opacity: 1,
+              }}
+              exit={{
+                scale: 0.9,
+                opacity: 0,
+              }}
+              transition={{
+                duration: 0.4,
+              }}
+              onClick={(e) =>
+                e.stopPropagation()
+              }
+              className="
+                w-full
+                max-w-6xl
+              "
+            >
 
-            </div>
+              {/* Image */}
 
-            <div className="text-center mt-6">
+              <div
+                className="
+                  relative
+                  w-full
+                  h-[65vh]
+                  md:h-[75vh]
+                  rounded-3xl
+                  overflow-hidden
+                "
+              >
 
-              <h3 className="text-3xl md:text-5xl font-black text-white">
-                {
-                  selectedPhoto.title
-                }
-              </h3>
+                <Image
+                  src={
+                    selectedPhoto.image
+                  }
+                  alt={
+                    selectedPhoto.title
+                  }
+                  fill
+                  priority
+                  className="
+                    object-contain
+                    bg-black
+                  "
+                />
 
-            </div>
+              </div>
 
-          </div>
+              {/* Netflix Title */}
 
-        </div>
-      )}
+              <motion.div
+                initial={{
+                  y: 20,
+                  opacity: 0,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                }}
+                transition={{
+                  delay: 0.2,
+                }}
+                className="
+                  text-center
+                  mt-6
+                "
+              >
+
+                <span
+                  className="
+                    bg-red-600
+                    px-4
+                    py-2
+                    rounded-full
+                    text-sm
+                    font-bold
+                  "
+                >
+                  {selectedPhoto.badge}
+                </span>
+
+                <h3
+                  className="
+                    text-3xl
+                    md:text-5xl
+                    font-black
+                    mt-5
+                  "
+                >
+                  {selectedPhoto.title}
+                </h3>
+
+              </motion.div>
+
+            </motion.div>
+
+          </motion.div>
+
+        )}
+
+      </AnimatePresence>
     </>
   );
 }

@@ -34,7 +34,7 @@ export default function Dresscode() {
       <motion.div
         initial={{
           opacity: 0,
-          y: 80,
+          y: 60,
         }}
         whileInView={{
           opacity: 1,
@@ -45,113 +45,110 @@ export default function Dresscode() {
           amount: 0.2,
         }}
         transition={{
-          duration: 1,
+          duration: 0.8,
         }}
         className="
-          max-w-5xl
+          relative
+          overflow-hidden
+          max-w-6xl
           mx-auto
-          bg-[#141414]
-          border
-          border-red-900/30
           rounded-3xl
           p-8
-          overflow-hidden
-          relative
+          md:p-12
+          border
+          border-red-900/30
+          bg-gradient-to-br
+          from-[#141414]
+          via-[#1a1a1a]
+          to-[#111111]
         "
       >
-        {/* Netflix Glow */}
-        <div className="absolute -top-24 -right-24 w-72 h-72 bg-red-600/10 blur-3xl rounded-full" />
+        {/* Glow Background */}
 
-        <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-red-600/10 blur-3xl rounded-full" />
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-red-600/10 blur-3xl rounded-full" />
 
-        <p className="tracking-[6px] text-gray-400 mb-8 uppercase">
-          Dresscode
-        </p>
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-red-600/10 blur-3xl rounded-full" />
 
-        <h2 className="text-4xl font-black mb-4">
-          Earth Tone
-        </h2>
+        <div className="relative z-10">
 
-        <p className="text-gray-400 max-w-3xl mb-14">
-          Kami mengundang
-          Bapak/Ibu/Saudara/i untuk
-          mengenakan pakaian bernuansa
-          Earth Tone agar suasana acara
-          semakin hangat, harmonis,
-          dan indah dalam dokumentasi.
-        </p>
+          <p className="tracking-[6px] text-gray-400 uppercase mb-6">
+            Dresscode
+          </p>
 
-        <div className="flex flex-wrap justify-center gap-10">
+          <h2 className="text-4xl md:text-5xl font-black mb-4">
+            Earth Tone
+          </h2>
 
-          {colors.map((color, index) => (
-            <motion.div
-              key={color.hex}
-              initial={{
-                opacity: 0,
-                y: 60,
-                scale: 0.7,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-              }}
-              viewport={{
-                once: true,
-              }}
-              transition={{
-                delay: index * 0.15,
-                duration: 0.8,
-              }}
-              animate={{
-                y: [0, -12],
-              }}
-              whileHover={{
-                scale: 1.15,
-              }}
-              className="text-center"
-            >
+          <p className="text-gray-400 max-w-3xl mb-14 leading-relaxed">
+            Kami mengundang
+            Bapak/Ibu/Saudara/i untuk
+            mengenakan pakaian bernuansa
+            Earth Tone agar suasana
+            acara semakin hangat,
+            harmonis, dan selaras
+            dalam dokumentasi.
+          </p>
 
+          {/* Allowed Colors */}
+
+          <div className="flex flex-wrap justify-center gap-10">
+
+            {colors.map((color, index) => (
               <motion.div
+                key={color.hex}
+                initial={{
+                  opacity: 0,
+                  scale: 0.8,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                viewport={{
+                  once: true,
+                }}
                 transition={{
-                  y: {
-                    repeat: Infinity,
-                    repeatType:
-                      "reverse",
+                  delay: index * 0.1,
+                }}
+                className="text-center"
+              >
+                <motion.div
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
                     duration:
                       2 +
                       index * 0.3,
+                    repeat: Infinity,
                     ease: "easeInOut",
-                  },
-                }}
-                animate={{
-                  boxShadow: [
-                    `0 0 0px ${color.hex}`,
-                    `0 0 30px ${color.hex}`,
-                  ],
-                }}
-                className="
-                  w-24
-                  h-24
-                  rounded-full
-                  border-4
-                  border-white/20
-                "
-                style={{
-                  backgroundColor:
-                    color.hex,
-                }}
-              />
+                  }}
+                  whileHover={{
+                    scale: 1.15,
+                  }}
+                  className="
+                    w-24
+                    h-24
+                    rounded-full
+                    border-4
+                    border-white/10
+                    shadow-2xl
+                  "
+                  style={{
+                    backgroundColor:
+                      color.hex,
+                    boxShadow: `0 0 35px ${color.hex}55`,
+                  }}
+                />
 
-              <p className="mt-4 font-medium text-gray-300">
-                {color.name}
-              </p>
-
-            </motion.div>
-          ))}
+                <p className="mt-4 text-gray-300 font-medium">
+                  {color.name}
+                </p>
+              </motion.div>
+            ))}
+          </div>
 
         </div>
-
       </motion.div>
     </section>
   );

@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
-import FadeIn from "../FadeIn";
-import CinematicReveal from "../CinematicReveal";
 
 import { weddingData } from "../../data/wedding";
 
@@ -30,22 +28,51 @@ function CountdownCard({
   animate = false,
 }: CountdownCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-3xl border border-red-900/30 bg-gradient-to-b from-zinc-900 to-black p-8 shadow-[0_0_30px_rgba(229,9,20,0.15)] transition-all duration-300 hover:scale-105 hover:border-red-600">
-
+    <div
+      className="
+        relative
+        overflow-hidden
+        rounded-3xl
+        border
+        border-red-900/30
+        bg-gradient-to-b
+        from-zinc-900
+        via-black
+        to-black
+        p-8
+        shadow-[0_0_40px_rgba(229,9,20,0.15)]
+        transition-all
+        duration-300
+        hover:border-red-600
+        hover:-translate-y-1
+      "
+    >
       <div className="absolute top-0 left-0 h-1 w-full bg-red-600" />
 
       <div
-        className={`text-5xl md:text-6xl font-black text-white ${
-          animate ? "animate-pulse" : ""
-        }`}
+        className={`
+          text-5xl
+          md:text-7xl
+          font-black
+          text-white
+          ${animate ? "animate-pulse" : ""}
+        `}
       >
         {String(value).padStart(2, "0")}
       </div>
 
-      <div className="mt-3 uppercase tracking-[0.3em] text-red-500 text-xs md:text-sm">
+      <div
+        className="
+          mt-4
+          uppercase
+          tracking-[0.3em]
+          text-red-500
+          text-xs
+          md:text-sm
+        "
+      >
         {label}
       </div>
-
     </div>
   );
 }
@@ -156,8 +183,6 @@ export default function Countdown() {
         />
       )}
 
-      <FadeIn>
-      <CinematicReveal>
       <section className="relative overflow-hidden py-28 px-6 text-center">
 
         {/* Background Glow */}
@@ -176,21 +201,46 @@ export default function Countdown() {
           {!isWeddingDay && (
             <div className="mb-14">
 
-              <div className="mx-auto mb-8 h-1 w-32 rounded-full bg-red-600" />
+            <h2
+              className="
+                text-4xl
+                md:text-6xl
+                font-black
+                tracking-[0.15em]
+                text-white
+              "
+            >
+              MENUJU
+            </h2>
 
-              <h2 className="text-4xl md:text-6xl font-black tracking-[0.15em] text-white">
-                MENUJU
-              </h2>
+            <h3
+              className="
+                mt-3
+                text-5xl
+                md:text-7xl
+                font-black
+                tracking-wide
+                text-red-600
+              "
+            >
+              HARI BAHAGIA
+            </h3>
 
-              <h3 className="mt-3 text-5xl md:text-7xl font-black tracking-wide text-red-600">
-                HARI BAHAGIA
-              </h3>
-
-              <p className="mt-6 text-lg text-zinc-400">
-                Sabtu, 8 Agustus 2026
-              </p>
-
+            <div
+              className="
+                inline-block
+                mt-6
+                bg-red-600
+                px-6
+                py-3
+                rounded-full
+                font-bold
+              "
+            >
+              Sabtu, 8 Agustus 2026
             </div>
+
+          </div>
           )}
 
           {isWeddingDay ? (
@@ -198,9 +248,33 @@ export default function Countdown() {
 
               <div className="mx-auto h-1 w-40 rounded-full bg-red-600" />
 
-              <h2 className="text-6xl md:text-8xl font-black tracking-wider text-red-600">
+              <>
+              <div
+                className="
+                  inline-block
+                  bg-red-600
+                  px-6
+                  py-3
+                  rounded-full
+                  font-bold
+                  mb-6
+                "
+              >
+                NOW STREAMING
+              </div>
+
+              <h2
+                className="
+                  text-6xl
+                  md:text-8xl
+                  font-black
+                  tracking-wider
+                  text-red-600
+                "
+              >
                 IT&apos;S TIME
               </h2>
+            </>
 
               <p className="text-xl md:text-2xl text-zinc-300">
                 Hari yang telah dinantikan akhirnya tiba ❤️
@@ -253,8 +327,6 @@ export default function Countdown() {
         </div>
 
       </section>
-      </CinematicReveal>
-      </FadeIn>
     </>
   );
 }
