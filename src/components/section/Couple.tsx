@@ -8,7 +8,7 @@ import { weddingData } from "../../data/wedding";
 
 export default function Couple() {
   return (
-    <section className="py-24 px-6">
+    <section className="py-24 px-6 overflow-hidden">
 
       <div className="max-w-6xl mx-auto">
 
