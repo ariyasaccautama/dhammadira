@@ -255,7 +255,7 @@ export default function Event() {
                     duration-300
                   "
                 >
-                  📅 Tambah ke Kalender
+                  📅 Kalender
                 </button>
 
               </div>
@@ -438,7 +438,7 @@ export default function Event() {
                     duration-300
                   "
                 >
-                  📅 Tambah ke Kalender
+                  📅 Kalender
                 </button>
 
               </div>
