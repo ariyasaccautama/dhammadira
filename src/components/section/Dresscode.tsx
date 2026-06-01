@@ -79,7 +79,7 @@ export default function Dresscode() {
             Earth Tone
           </h2>
 
-          <p className="text-gray-400 max-w-3xl mb-14 leading-relaxed">
+          <p className="text-gray-400 max-w-3xl mb-10 leading-relaxed">
             Kami mengundang
             Bapak/Ibu/Saudara/i untuk
             mengenakan pakaian bernuansa
@@ -91,7 +91,7 @@ export default function Dresscode() {
 
           {/* Allowed Colors */}
 
-          <div className="flex flex-wrap justify-center gap-10">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-10">
 
             {colors.map((color, index) => (
               <motion.div
@@ -114,7 +114,7 @@ export default function Dresscode() {
               >
                 <motion.div
                   animate={{
-                    y: [0, -10, 0],
+                    y: [0, -8, 0],
                   }}
                   transition={{
                     duration:
@@ -124,28 +124,31 @@ export default function Dresscode() {
                     ease: "easeInOut",
                   }}
                   whileHover={{
-                    scale: 1.15,
+                    scale: 1.12,
                   }}
                   className="
-                    w-24
-                    h-24
+                    w-16
+                    h-16
+                    md:w-20
+                    md:h-20
                     rounded-full
-                    border-4
+                    border-2
                     border-white/10
-                    shadow-2xl
+                    shadow-xl
                   "
                   style={{
                     backgroundColor:
                       color.hex,
-                    boxShadow: `0 0 35px ${color.hex}55`,
+                    boxShadow: `0 0 25px ${color.hex}55`,
                   }}
                 />
 
-                <p className="mt-4 text-gray-300 font-medium">
+                <p className="mt-3 text-sm text-gray-300 font-medium">
                   {color.name}
                 </p>
               </motion.div>
             ))}
+
           </div>
 
         </div>
