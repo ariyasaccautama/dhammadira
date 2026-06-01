@@ -101,7 +101,7 @@ export const weddingData = {
 
   giftAddress: {
     recipient:
-      "Prasetya Dhamma Permana Putra",
+      "Dhamma / Dira",
 
     address:
       "Jl. Anggrek, No.16 RT 03/06, Kel. Bojong Menteng, Kec. Rawalumbu, Kota Bekasi, 17117",

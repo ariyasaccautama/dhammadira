@@ -1,7 +1,7 @@
 "use client";
 
 import { weddingData } from "../../data/wedding";
-import { Copy } from "lucide-react";
+import { Copy, Gift as GiftIcon } from "lucide-react";
 import toast from "react-hot-toast";
 
 export default function Gift() {
@@ -13,46 +13,69 @@ export default function Gift() {
 
     if (label === "Alamat") {
       toast.success(
-        "Alamat berhasil disalin"
+        "Alamat berhasil disalin 📍"
       );
     } else {
       toast.success(
-        `Nomor rekening ${label} berhasil disalin`
+        `Nomor rekening ${label} disalin 💳`
       );
     }
   };
 
   return (
     <section className="py-24 px-6">
-      <h2 className="text-4xl font-bold text-center mb-12">
+      <h2 className="text-4xl font-bold text-center mb-3">
         Wedding Gift
       </h2>
 
-      <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      <p className="text-center text-gray-400 mb-12">
+        Kehadiran dan doa Anda adalah hadiah terbaik.
+        Namun jika berkenan berbagi kebahagiaan,
+        Anda dapat mengirimkan hadiah melalui:
+      </p>
 
-        {/* Rekening Pria */}
+      <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+        {/* MANDIRI */}
         <div
           className="
-            bg-[#141414]
+            relative
+            overflow-hidden
+            rounded-3xl
+            p-8
+            text-white
             border
-            border-red-900/30
-            hover:border-red-600
+            border-yellow-500/20
+            bg-gradient-to-br
+            from-slate-900
+            via-blue-950
+            to-slate-950
             hover:scale-105
             transition
             duration-300
-            rounded-2xl
-            p-8
           "
         >
-          <h3 className="text-2xl font-bold mb-4">
+          <div className="absolute top-5 right-5">
+            <img
+              src="/images/bank-mandiri.png"
+              alt="Mandiri"
+              className="h-10 object-contain"
+            />
+          </div>
+
+          <p className="text-sm text-gray-400 uppercase tracking-widest">
+            Bank Account
+          </p>
+
+          <h3 className="text-3xl font-black mt-4">
             {weddingData.gift.groom.bank}
           </h3>
 
-          <p className="text-3xl font-black text-red-500">
+          <p className="text-4xl font-black text-yellow-400 mt-6 tracking-wider">
             {weddingData.gift.groom.account}
           </p>
 
-          <p className="text-gray-400 mt-4">
+          <p className="text-gray-300 mt-5">
             {weddingData.gift.groom.holder}
           </p>
 
@@ -64,47 +87,65 @@ export default function Gift() {
               )
             }
             className="
-              mt-6
+              mt-8
               flex
               items-center
               gap-2
-              bg-red-600
-              hover:bg-red-700
+              bg-white
+              text-black
+              hover:bg-gray-200
               px-5
               py-3
-              rounded-lg
+              rounded-xl
               font-bold
               transition
             "
           >
             <Copy size={18} />
-            Copy Rekening
+            Salin Rekening
           </button>
         </div>
 
-        {/* Rekening Wanita */}
+        {/* BCA */}
         <div
           className="
-            bg-[#141414]
+            relative
+            overflow-hidden
+            rounded-3xl
+            p-8
+            text-white
             border
-            border-red-900/30
-            hover:border-red-600
+            border-blue-500/20
+            bg-gradient-to-br
+            from-blue-950
+            via-blue-800
+            to-slate-950
             hover:scale-105
             transition
             duration-300
-            rounded-2xl
-            p-8
           "
         >
-          <h3 className="text-2xl font-bold mb-4">
+          <div className="absolute top-5 right-5">
+            <img
+              src="/images/bank-bca.png"
+              alt="BCA"
+              className="h-10 object-contain"
+            />
+          </div>
+
+          <p className="text-sm text-blue-200 uppercase tracking-widest">
+            Bank Account
+          </p>
+
+          <h3 className="text-3xl font-black mt-4">
             {weddingData.gift.bride.bank}
           </h3>
 
-          <p className="text-3xl font-black text-red-500">
+          <p className="text-4xl font-black mt-6 tracking-wider">
             {weddingData.gift.bride.account}
           </p>
 
-          <p className="text-gray-400 mt-4">
+          <p className="text-blue-100 mt-5">
             {weddingData.gift.bride.holder}
           </p>
 
@@ -116,42 +157,69 @@ export default function Gift() {
               )
             }
             className="
-              mt-6
+              mt-8
               flex
               items-center
               gap-2
-              bg-red-600
-              hover:bg-red-700
+              bg-white
+              text-black
+              hover:bg-gray-200
               px-5
               py-3
-              rounded-lg
+              rounded-xl
               font-bold
               transition
             "
           >
             <Copy size={18} />
-            Copy Rekening
+            Salin Rekening
           </button>
         </div>
 
       </div>
 
-      {/* Kirim Kado */}
-      <div className="max-w-5xl mx-auto mt-10">
+      {/* KADO FISIK */}
+
+      <div className="max-w-6xl mx-auto mt-10">
         <div
           className="
-            bg-[#141414]
+            relative
+            overflow-hidden
+            rounded-3xl
+            p-8
             border
             border-red-900/30
-            rounded-2xl
-            p-8
+            bg-gradient-to-r
+            from-red-950/50
+            via-zinc-900
+            to-red-950/50
           "
         >
-          <h3 className="text-2xl font-bold mb-4">
-            Kirim Kado
-          </h3>
 
-          <p className="text-gray-400 mt-2 mb-8 leading-relaxed">
+          <div className="absolute right-8 top-8 text-7xl opacity-10">
+            🎁
+          </div>
+
+          <div className="absolute left-8 bottom-6 text-5xl opacity-10">
+            💝
+          </div>
+
+          <div className="flex items-center gap-3 mb-6">
+            <GiftIcon size={28} />
+            <h3 className="text-3xl font-black">
+              Kirim Kado
+            </h3>
+          </div>
+
+          <p className="text-lg text-gray-300 mb-2">
+            📦 Penerima:
+          </p>
+
+          <p className="font-semibold text-xl mb-4">
+            {weddingData.giftAddress.recipient}
+          </p>
+
+          <p className="text-gray-400 leading-relaxed max-w-3xl mb-8">
             {weddingData.giftAddress.address}
           </p>
 
@@ -168,16 +236,17 @@ export default function Gift() {
               gap-2
               bg-red-600
               hover:bg-red-700
-              px-5
+              px-6
               py-3
-              rounded-lg
+              rounded-xl
               font-bold
               transition
             "
           >
             <Copy size={18} />
-            Copy Alamat
+            Salin Alamat
           </button>
+
         </div>
       </div>
     </section>

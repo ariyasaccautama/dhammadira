@@ -18,6 +18,7 @@ import PhotoCollection from "../components/section/PhotoCollection";
 // import Location from "../components/section/Location";
 import RSVP from "../components/section/RSVP";
 import Gift from "../components/section/Gift";
+import Closing from "../components/section/Closing";
 
 function HomeContent() {
   const searchParams = useSearchParams();
@@ -100,6 +101,8 @@ function HomeContent() {
       />
 
       <Gift />
+
+      <Closing />
 
     </main>
   );
