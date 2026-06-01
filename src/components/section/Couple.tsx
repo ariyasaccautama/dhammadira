@@ -52,7 +52,7 @@ export default function Couple() {
           <motion.div
             initial={{
               opacity: 0,
-              x: -150,
+              x: -60,
               rotate: -4,
             }}
             whileInView={{
@@ -196,7 +196,7 @@ export default function Couple() {
           <motion.div
             initial={{
               opacity: 0,
-              x: 150,
+              x: 60,
               rotate: 4,
             }}
             whileInView={{
