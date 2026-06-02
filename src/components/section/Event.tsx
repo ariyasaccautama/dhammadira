@@ -227,7 +227,7 @@ export default function Event() {
                     duration-300
                   "
                 >
-                  📍 Google Maps
+                  📍 Maps
                 </a>
 
                 <a
@@ -414,7 +414,7 @@ export default function Event() {
                     duration-300
                   "
                 >
-                  📍 Google Maps
+                  📍 Maps
                 </a>
 
                 <a
