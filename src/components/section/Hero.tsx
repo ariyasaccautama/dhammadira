@@ -40,7 +40,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "url('/images/cover.jpg')",
+            "url('/images/cover2.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

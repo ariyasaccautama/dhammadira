@@ -17,7 +17,7 @@ export default function Closing() {
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "url('/images/featuredmovie.jpg')",
+            "url('/images/footer.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
