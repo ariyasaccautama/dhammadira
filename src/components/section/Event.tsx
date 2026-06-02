@@ -214,8 +214,12 @@ export default function Event() {
                     items-center
                     justify-center
                     gap-2
-                    bg-red-600
-                    hover:bg-red-700
+                    bg-white/10
+                    backdrop-blur
+                    border
+                    border-white/10
+                    hover:bg-white/20
+                    hover:border-red-500/40
                     py-4
                     rounded-xl
                     font-bold
@@ -223,7 +227,7 @@ export default function Event() {
                     duration-300
                   "
                 >
-                  📍 Lokasi
+                  📍 Google Maps
                 </a>
 
                 <a
@@ -397,8 +401,12 @@ export default function Event() {
                     items-center
                     justify-center
                     gap-2
-                    bg-red-600
-                    hover:bg-red-700
+                    bg-white/10
+                    backdrop-blur
+                    border
+                    border-white/10
+                    hover:bg-white/20
+                    hover:border-red-500/40
                     py-4
                     rounded-xl
                     font-bold
@@ -406,7 +414,7 @@ export default function Event() {
                     duration-300
                   "
                 >
-                  📍 Lokasi
+                  📍 Google Maps
                 </a>
 
                 <a
