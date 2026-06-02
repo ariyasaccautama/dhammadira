@@ -28,7 +28,7 @@ export default function Cover({
     >
       {/* Glow Background */}
 
-      <div className="absolute inset-0 overflow-hidden">
+      {/* <div className="absolute inset-0 overflow-hidden">
 
         <div
           className="
@@ -58,7 +58,7 @@ export default function Cover({
           "
         />
 
-      </div>
+      </div> */}
 
       {/* Content */}
 
@@ -179,7 +179,7 @@ export default function Cover({
           "
         >
           Mohon maaf apabila terdapat kesalahan
-          penulisan nama ataupun gelar.
+          penulisan nama maupun gelar.
         </p>
 
       </div>
