@@ -148,7 +148,7 @@ useEffect(() => {
             <div
               className="
                 text-6xl
-                md:text-9xl
+                md:text-8xl
                 font-black
                 text-white
                 tracking-tight
@@ -169,7 +169,9 @@ useEffect(() => {
               text-3xl
               md:text-5xl
               font-black
+              text-red-600
               my-4
+              ml-35
             "
           >
             &
@@ -184,7 +186,7 @@ useEffect(() => {
             <div
               className="
                 text-6xl
-                md:text-9xl
+                md:text-8xl
                 font-black
                 text-white
                 tracking-tight
