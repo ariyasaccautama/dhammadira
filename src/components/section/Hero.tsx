@@ -118,7 +118,7 @@ useEffect(() => {
           className="
             w-full
             max-w-6xl
-            px-9
+            px-8
             md:px-20
           "
         >
