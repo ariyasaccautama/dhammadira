@@ -8,11 +8,18 @@ import { weddingData } from "../../data/wedding";
 export default function Hero() {
   const [currentBg, setCurrentBg] =
     useState(1);
+    
+useEffect(() => {
+  for (let i = 1; i <= 20; i++) {
+    const img = new Image();
+    img.src = `/images/bgHero/Hero${i}.jpg`;
+  }
+}, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentBg((prev) =>
-        prev >= 20 ? 1 : prev + 1
+        prev >= 8 ? 1 : prev + 1
       );
     }, 3500);
 
