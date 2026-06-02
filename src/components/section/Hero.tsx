@@ -171,7 +171,6 @@ useEffect(() => {
               font-black
               text-red-600
               my-4
-              ml-35
             "
           >
             &
