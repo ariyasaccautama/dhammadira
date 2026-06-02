@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 
 import { weddingData } from "../../data/wedding";
@@ -135,7 +136,7 @@ export default function Gift() {
                     absolute
                     top-5
                     right-5
-                    bg-white/90
+                    bg-white/65
                     backdrop-blur-md
                     px-2.5
                     py-1.5
@@ -143,10 +144,12 @@ export default function Gift() {
                     shadow-lg
                   "
                 >
-                  <img
+                  <Image
                     src="/images/bank-mandiri.png"
                     alt="Mandiri"
-                    className="h-7 md:h-10 w-auto"
+                    width={100}
+                    height={30}
+                    className="h-7 md:h-8 w-auto"
                   />
                 </div>
 
@@ -217,7 +220,7 @@ export default function Gift() {
                     absolute
                     top-5
                     right-5
-                    bg-white/90
+                    bg-white/65
                     backdrop-blur-md
                     px-2.5
                     py-1.5
@@ -225,10 +228,12 @@ export default function Gift() {
                     shadow-lg
                   "
                 >
-                  <img
+                  <Image
                     src="/images/bank-bca.png"
                     alt="BCA"
-                    className="h-7 md:h-10 w-auto"
+                    width={100}
+                    height={30}
+                    className="h-7 md:h-8 w-auto"
                   />
                 </div>
 
