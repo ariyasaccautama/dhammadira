@@ -4,7 +4,11 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { X } from "lucide-react";
+import {
+  X,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 import { weddingData } from "../../data/wedding";
 
@@ -15,35 +19,76 @@ type Photo = {
 };
 
 export default function PhotoCollection() {
+  const [selectedIndex, setSelectedIndex] =
+    useState<number | null>(null);
+
   const [selectedPhoto, setSelectedPhoto] =
     useState<Photo | null>(null);
 
+  const nextPhoto = () => {
+    if (selectedIndex === null) return;
+
+    const next =
+      (selectedIndex + 1) %
+      weddingData.favoriteMoments.length;
+
+    setSelectedIndex(next);
+
+    setSelectedPhoto(
+      weddingData.favoriteMoments[next]
+    );
+  };
+
+  const prevPhoto = () => {
+    if (selectedIndex === null) return;
+
+    const prev =
+      selectedIndex === 0
+        ? weddingData.favoriteMoments.length - 1
+        : selectedIndex - 1;
+
+    setSelectedIndex(prev);
+
+    setSelectedPhoto(
+      weddingData.favoriteMoments[prev]
+    );
+  };
+
   useEffect(() => {
-    const handleEscape = (
+    const handleKeyDown = (
       event: KeyboardEvent
     ) => {
+      if (!selectedPhoto) return;
+
       if (event.key === "Escape") {
         setSelectedPhoto(null);
+      }
+
+      if (event.key === "ArrowRight") {
+        nextPhoto();
+      }
+
+      if (event.key === "ArrowLeft") {
+        prevPhoto();
       }
     };
 
     window.addEventListener(
       "keydown",
-      handleEscape
+      handleKeyDown
     );
 
     return () => {
       window.removeEventListener(
         "keydown",
-        handleEscape
+        handleKeyDown
       );
     };
-  }, []);
+  }, [selectedPhoto, selectedIndex]);
 
   return (
     <>
       <section className="py-24 px-6">
-
         <div className="max-w-7xl mx-auto">
 
           {/* Header */}
@@ -65,7 +110,6 @@ export default function PhotoCollection() {
             }}
             className="text-center mb-14"
           >
-
             <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full" />
 
             <h2 className="text-4xl md:text-5xl font-black">
@@ -75,13 +119,11 @@ export default function PhotoCollection() {
             <p className="text-gray-400 mt-4">
               Saksikan di hari bahagia kami!
             </p>
-
           </motion.div>
 
           {/* Gallery */}
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-
             {weddingData.favoriteMoments.map(
               (photo, index) => (
                 <motion.div
@@ -104,11 +146,10 @@ export default function PhotoCollection() {
                     delay:
                       index * 0.1,
                   }}
-                  onClick={() =>
-                    setSelectedPhoto(
-                      photo
-                    )
-                  }
+                  onClick={() => {
+                    setSelectedPhoto(photo);
+                    setSelectedIndex(index);
+                  }}
                   className="
                     group
                     relative
@@ -117,7 +158,6 @@ export default function PhotoCollection() {
                     cursor-pointer
                   "
                 >
-
                   {/* Badge */}
 
                   <div
@@ -141,7 +181,6 @@ export default function PhotoCollection() {
                   {/* Image */}
 
                   <div className="relative aspect-[2/3]">
-
                     <Image
                       src={photo.image}
                       alt={photo.title}
@@ -153,7 +192,6 @@ export default function PhotoCollection() {
                         group-hover:scale-110
                       "
                     />
-
                   </div>
 
                   {/* Overlay */}
@@ -169,7 +207,7 @@ export default function PhotoCollection() {
                     "
                   />
 
-                  {/* Hover Glow */}
+                  {/* Hover Border */}
 
                   <div
                     className="
@@ -187,7 +225,6 @@ export default function PhotoCollection() {
                   {/* Title */}
 
                   <div className="absolute bottom-4 left-4 z-20">
-
                     <h3
                       className="
                         text-lg
@@ -197,25 +234,18 @@ export default function PhotoCollection() {
                     >
                       {photo.title}
                     </h3>
-
                   </div>
-
                 </motion.div>
               )
             )}
-
           </div>
-
         </div>
-
       </section>
 
       {/* MODAL */}
 
       <AnimatePresence>
-
         {selectedPhoto && (
-
           <motion.div
             initial={{
               opacity: 0,
@@ -241,7 +271,6 @@ export default function PhotoCollection() {
               p-4
             "
           >
-
             {/* Close */}
 
             <button
@@ -261,6 +290,74 @@ export default function PhotoCollection() {
               "
             >
               <X size={28} />
+            </button>
+
+            {/* Prev */}
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                prevPhoto();
+              }}
+              className="
+                absolute
+                left-3
+                md:left-8
+                top-1/2
+                -translate-y-1/2
+                z-50
+
+                w-12
+                h-12
+
+                flex
+                items-center
+                justify-center
+
+                rounded-full
+
+                bg-white/10
+                backdrop-blur-xl
+
+                hover:bg-white/20
+                transition
+              "
+            >
+              <ChevronLeft size={28} />
+            </button>
+
+            {/* Next */}
+
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                nextPhoto();
+              }}
+              className="
+                absolute
+                right-3
+                md:right-8
+                top-1/2
+                -translate-y-1/2
+                z-50
+
+                w-12
+                h-12
+
+                flex
+                items-center
+                justify-center
+
+                rounded-full
+
+                bg-white/10
+                backdrop-blur-xl
+
+                hover:bg-white/20
+                transition
+              "
+            >
+              <ChevronRight size={28} />
             </button>
 
             {/* Content */}
@@ -289,9 +386,6 @@ export default function PhotoCollection() {
                 max-w-6xl
               "
             >
-
-              {/* Image */}
-
               <div
                 className="
                   relative
@@ -302,7 +396,6 @@ export default function PhotoCollection() {
                   overflow-hidden
                 "
               >
-
                 <Image
                   src={
                     selectedPhoto.image
@@ -317,29 +410,9 @@ export default function PhotoCollection() {
                     bg-black
                   "
                 />
-
               </div>
 
-              {/* Netflix Title */}
-
-              <motion.div
-                initial={{
-                  y: 20,
-                  opacity: 0,
-                }}
-                animate={{
-                  y: 0,
-                  opacity: 1,
-                }}
-                transition={{
-                  delay: 0.2,
-                }}
-                className="
-                  text-center
-                  mt-6
-                "
-              >
-
+              <div className="text-center mt-6">
                 <span
                   className="
                     bg-red-600
@@ -363,15 +436,10 @@ export default function PhotoCollection() {
                 >
                   {selectedPhoto.title}
                 </h3>
-
-              </motion.div>
-
+              </div>
             </motion.div>
-
           </motion.div>
-
         )}
-
       </AnimatePresence>
     </>
   );
