@@ -110,32 +110,32 @@ export const weddingData = {
   favoriteMoments: [
     {
       title: "Ada Apa Dengan Dira?",
-      image: "/images/1.png",
+      image: "/images/1.jpeg",
       badge: "Eksklusif",
     },
     {
       title: "Dua Latar Biru",
-      image: "/images/2.png",
+      image: "/images/2.jpeg",
       badge: "Premium 👑",
     },
     {
       title: "SORE",
-      image: "/images/3.png",
+      image: "/images/3.jpeg",
       badge: "Favorite",
     },
     {
       title: "Crazy Rich Asians",
-      image: "/images/4.jpg",
+      image: "/images/4.jpeg",
       badge: "Top 3",
     },
     {
       title: "Pernikahan Dini",
-      image: "/images/5.png",
+      image: "/images/5.jpeg",
       badge: "Top 2",
     },
     {
       title: "Keluarga Cemara",
-      image: "/images/6.png",
+      image: "/images/6.jpeg",
       badge: "Top 1",
     },
   ],
