@@ -67,8 +67,8 @@ export default function AudioPlayer({
         onClick={toggleMusic}
         className="
           fixed
-          bottom-6
-          right-6
+          bottom-24
+          right-5
           z-[9999]
           w-14
           h-14
