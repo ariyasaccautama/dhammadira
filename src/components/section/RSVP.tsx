@@ -235,7 +235,7 @@ export default function RSVP({
     }, [wishes, page]);
 
   return (
-    <section className="py-24 px-6">
+    <section id="rsvp" className="py-24 px-6">
 
       <div className="w-24 h-1 bg-red-600 mx-auto mb-6 rounded-full" />
 

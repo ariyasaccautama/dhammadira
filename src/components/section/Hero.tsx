@@ -27,7 +27,7 @@ export default function Hero() {
     new Date() >= weddingDate;
 
   return (
-    <section
+    <section id="hero"
       className="
         relative
         min-h-[100svh]

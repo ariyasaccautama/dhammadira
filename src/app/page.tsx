@@ -21,6 +21,8 @@ import RSVP from "../components/section/RSVP";
 import Gift from "../components/section/Gift";
 import Closing from "../components/section/Closing";
 
+import FloatingNav from "../components/FloatingNav";
+
 function HomeContent() {
   const searchParams = useSearchParams();
 
@@ -81,6 +83,8 @@ function HomeContent() {
       <AudioPlayer
         isOpen={opened}
       />
+
+      <FloatingNav />
 
       <main className="bg-black text-white">
 
