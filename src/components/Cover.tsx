@@ -179,7 +179,7 @@ export default function Cover({
           "
         >
           Mohon maaf apabila terdapat kesalahan
-          penulisan nama maupun gelar.
+          penulisan nama ataupun gelar.
         </p>
 
       </div>
