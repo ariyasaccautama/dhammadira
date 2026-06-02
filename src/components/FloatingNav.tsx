@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import {
   House,
   Shirt,
@@ -9,6 +11,65 @@ import {
 } from "lucide-react";
 
 export default function FloatingNav() {
+  const [activeSection, setActiveSection] =
+    useState("hero");
+
+  const sections = [
+    {
+      id: "hero",
+      icon: House,
+    },
+    {
+      id: "dresscode",
+      icon: Shirt,
+    },
+    {
+      id: "event",
+      icon: CalendarDays,
+    },
+    {
+      id: "rsvp",
+      icon: MessageCircleHeart,
+    },
+    {
+      id: "gift",
+      icon: Gift,
+    },
+  ];
+
+  useEffect(() => {
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(
+                entry.target.id
+              );
+            }
+          });
+        },
+        {
+          threshold: 0.4,
+        }
+      );
+
+    sections.forEach((section) => {
+      const element =
+        document.getElementById(
+          section.id
+        );
+
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   const scrollTo = (id: string) => {
     document
       .getElementById(id)
@@ -44,75 +105,36 @@ export default function FloatingNav() {
         shadow-xl
       "
     >
-      <button
-        onClick={() =>
-          scrollTo("hero")
-        }
-        className="
-          text-white/70
-          hover:text-white
-          hover:scale-110
-          transition-all
-        "
-      >
-        <House size={22} />
-      </button>
+      {sections.map(
+        ({ id, icon: Icon }) => (
+          <button
+            key={id}
+            onClick={() =>
+              scrollTo(id)
+            }
+            className={`
+              transition-all
+              duration-300
 
-      <button
-        onClick={() =>
-          scrollTo("dresscode")
-        }
-        className="
-          text-white/70
-          hover:text-white
-          hover:scale-110
-          transition-all
-        "
-      >
-        <Shirt size={22} />
-      </button>
-
-      <button
-        onClick={() =>
-          scrollTo("event")
-        }
-        className="
-          text-white/70
-          hover:text-white
-          hover:scale-110
-          transition-all
-        "
-      >
-        <CalendarDays size={22} />
-      </button>
-
-      <button
-        onClick={() =>
-          scrollTo("rsvp")
-        }
-        className="
-          text-white/70
-          hover:text-white
-          hover:scale-110
-          transition-all
-        "
-      >
-        <MessageCircleHeart size={22} />
-      </button>
-
-      <button
-        onClick={() =>
-          scrollTo("gift")
-        }
-        className="
-          text-white/70
-          hover:text-white
-          hover:scale-110
-          transition-all
-        "
-      >
-        <Gift size={22} />
-      </button>
+              ${
+                activeSection === id
+                  ? `
+                    text-red-600
+                    scale-125
+                    drop-shadow-[0_0_12px_rgba(229,9,20,0.8)]
+                  `
+                  : `
+                    text-white/70
+                    hover:text-white
+                    hover:scale-110
+                  `
+              }
+            `}
+          >
+            <Icon size={22} />
+          </button>
+        )
+      )}
     </div>
   );
 }
