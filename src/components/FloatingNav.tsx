@@ -10,10 +10,6 @@ import {
   Gift,
 } from "lucide-react";
 
-export default function FloatingNav() {
-  const [activeSection, setActiveSection] =
-    useState("hero");
-
   const sections = [
     {
       id: "hero",
@@ -36,6 +32,10 @@ export default function FloatingNav() {
       icon: Gift,
     },
   ];
+
+export default function FloatingNav() {
+  const [activeSection, setActiveSection] =
+    useState("hero");
 
   useEffect(() => {
     const observer =
