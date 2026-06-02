@@ -125,7 +125,7 @@ export const weddingData = {
     },
     {
       title: "Crazy Rich Asians",
-      image: "/images/4.jpeg",
+      image: "/images/4.jpg",
       badge: "Top 3",
     },
     {
