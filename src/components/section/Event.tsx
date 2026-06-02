@@ -214,7 +214,7 @@ export default function Event() {
                     items-center
                     justify-center
                     gap-2
-                    bg-white/10
+                    bg-white/25
                     backdrop-blur
                     border
                     border-white/10
@@ -246,7 +246,7 @@ export default function Event() {
                     items-center
                     justify-center
                     gap-2
-                    bg-white/10
+                    bg-white/25
                     backdrop-blur
                     border
                     border-white/10
@@ -401,7 +401,7 @@ export default function Event() {
                     items-center
                     justify-center
                     gap-2
-                    bg-white/10
+                    bg-white/25
                     backdrop-blur
                     border
                     border-white/10
@@ -433,7 +433,7 @@ export default function Event() {
                     items-center
                     justify-center
                     gap-2
-                    bg-white/10
+                    bg-white/25
                     backdrop-blur
                     border
                     border-white/10
