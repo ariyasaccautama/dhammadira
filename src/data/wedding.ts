@@ -24,7 +24,7 @@ export const weddingData = {
       "Dhamma & Dira: Hari Bahagia",
 
     releaseDate:
-      "Coming Soon on Saturday, 08 August 2026",
+      "Coming Soon • August 8, 2026",
 
     description:
       "Dipertemukan oleh karma baik dan perjalanan hidup yang penuh makna, Dhamma dan Dira melangkah bersama menuju babak baru kehidupan. Dengan cinta, pengertian, dan dukungan keluarga, keduanya siap mengikat janji suci dalam kebahagiaan.",
