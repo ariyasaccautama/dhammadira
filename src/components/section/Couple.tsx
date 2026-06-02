@@ -94,9 +94,10 @@ export default function Couple() {
               <div className="absolute inset-0 rounded-full bg-red-600/30 blur-3xl" />
 
               <Image
-                src="/images/groom.jpg"
+                src="/images/groom7.jpg"
                 alt="Groom"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="
                   object-cover
                   rounded-full
@@ -238,9 +239,10 @@ export default function Couple() {
               <div className="absolute inset-0 rounded-full bg-red-600/30 blur-3xl" />
 
               <Image
-                src="/images/bride.jpg"
+                src="/images/bride6.jpg"
                 alt="Bride"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="
                   object-cover
                   rounded-full
