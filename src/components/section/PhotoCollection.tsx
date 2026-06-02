@@ -1,6 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {
+  useEffect,
+  useState,
+  useCallback,
+} from "react";
+
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -25,7 +30,7 @@ export default function PhotoCollection() {
   const [selectedPhoto, setSelectedPhoto] =
     useState<Photo | null>(null);
 
-  const nextPhoto = () => {
+  const nextPhoto = useCallback(() => {
     if (selectedIndex === null) return;
 
     const next =
@@ -37,9 +42,9 @@ export default function PhotoCollection() {
     setSelectedPhoto(
       weddingData.favoriteMoments[next]
     );
-  };
+  }, [selectedIndex]);
 
-  const prevPhoto = () => {
+  const prevPhoto = useCallback(() => {
     if (selectedIndex === null) return;
 
     const prev =
@@ -52,7 +57,7 @@ export default function PhotoCollection() {
     setSelectedPhoto(
       weddingData.favoriteMoments[prev]
     );
-  };
+  }, [selectedIndex]);
 
   useEffect(() => {
     const handleKeyDown = (
@@ -84,7 +89,12 @@ export default function PhotoCollection() {
         handleKeyDown
       );
     };
-  }, [selectedPhoto, selectedIndex]);
+  }, [
+      selectedPhoto,
+      selectedIndex,
+      nextPhoto,
+      prevPhoto,
+    ]);
 
   return (
     <>
