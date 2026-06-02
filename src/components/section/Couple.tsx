@@ -94,7 +94,7 @@ export default function Couple() {
               <div className="absolute inset-0 rounded-full bg-red-600/30 blur-3xl" />
 
               <Image
-                src="/images/groom.png"
+                src="/images/groom.jpg"
                 alt="Groom"
                 fill
                 className="
@@ -238,7 +238,7 @@ export default function Couple() {
               <div className="absolute inset-0 rounded-full bg-red-600/30 blur-3xl" />
 
               <Image
-                src="/images/bridge.png"
+                src="/images/bride.jpg"
                 alt="Bride"
                 fill
                 className="
