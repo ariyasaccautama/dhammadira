@@ -109,7 +109,7 @@ export async function POST(
       .upsert({
         guest_id:
           guestId,
-          name,
+        name,
         attendance,
         message,
         updated_at:
