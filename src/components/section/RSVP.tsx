@@ -235,11 +235,26 @@ export default function RSVP({
       setPage(1);
 
       loadWishes();
-    } catch {
-      toast.error(
-        "Gagal mengirim RSVP"
-      );
-    } finally {
+    } catch (error) {
+
+        if (
+          error instanceof Error &&
+          error.message === "Guest not found"
+        ) {
+
+          toast.error(
+            "ID Undangan tidak valid ❌"
+          );
+
+        } else {
+
+          toast.error(
+            "Gagal mengirim RSVP"
+          );
+
+        }
+
+      } finally {
       setLoading(false);
     }
   };
