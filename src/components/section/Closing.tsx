@@ -1,5 +1,7 @@
 "use client";
 
+import { FaInstagram } from "react-icons/fa";
+
 export default function Closing() {
   const scrollToDresscode = () => {
     document
@@ -11,8 +13,8 @@ export default function Closing() {
 
   return (
     <section className="relative py-32 overflow-hidden">
-
       {/* Background */}
+
       <div
         className="absolute inset-0"
         style={{
@@ -24,7 +26,10 @@ export default function Closing() {
       />
 
       {/* Overlay */}
+
       <div className="absolute inset-0 bg-black/75" />
+
+      {/* Content */}
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
 
@@ -55,6 +60,7 @@ export default function Closing() {
         </blockquote>
 
         {/* Reminder Dresscode */}
+
         <div
           className="
             mt-14
@@ -73,8 +79,13 @@ export default function Closing() {
           </div>
 
           <h3 className="text-2xl font-bold mb-3">
-            Jangan Lupa Dresscode Ya!😊
+            Jangan Lupa Dresscode Ya! 😊
           </h3>
+
+          <p className="text-gray-400 mb-6">
+            Yuk tampil selaras dan ikut
+            meramaikan momen spesial kami.
+          </p>
 
           <button
             onClick={scrollToDresscode}
@@ -90,6 +101,60 @@ export default function Closing() {
           >
             🎨 Lihat Dresscode
           </button>
+        </div>
+
+        {/* Footer */}
+
+        <div className="mt-24">
+
+          <div
+            className="
+              w-24
+              h-px
+              bg-red-600/40
+              mx-auto
+              mb-8
+            "
+          />
+
+          <p className="text-gray-500 text-sm">
+            Design & Developed with
+            <span className="text-red-500">
+              {" "}❤️{" "}
+            </span>
+            by
+          </p>
+
+          <a
+            href="https://instagram.com/ariyamelulu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex
+              items-center
+              gap-2
+              mt-4
+
+              text-gray-200
+              hover:text-red-500
+
+              transition-all
+              duration-300
+
+              hover:scale-105
+            "
+          >
+            <FaInstagram size={20} />
+
+            <span className="font-medium">
+              Instagram
+            </span>
+          </a>
+
+          <p className="text-xs text-gray-500 mt-8">
+            © 2026 Dhamma & Dira Wedding Invitation
+          </p>
+
         </div>
 
       </div>

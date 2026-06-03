@@ -20,6 +20,7 @@ import PhotoCollection from "../components/section/PhotoCollection";
 import RSVP from "../components/section/RSVP";
 import Gift from "../components/section/Gift";
 import Closing from "../components/section/Closing";
+//import Footer from "../components/Footer";
 
 import FloatingNav from "../components/FloatingNav";
 
@@ -114,6 +115,8 @@ function HomeContent() {
         <Gift />
 
         <Closing />
+
+        {/* <Footer /> */}
 
       </main>
     </>
