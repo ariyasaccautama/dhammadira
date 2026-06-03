@@ -98,22 +98,18 @@ export default function RSVP({
         const guest =
           await res.json();
 
-        if (guest) {
+        if (guest?.rsvp) {
 
           setHasSubmitted(true);
 
-          // JANGAN overwrite nama dari URL
+          setAttendance(
+            guest.rsvp.attendance
+          );
 
-          if (guest.rsvp) {
+          setMessage(
+            guest.rsvp.message || ""
+          );
 
-            setAttendance(
-              guest.rsvp.attendance
-            );
-
-            setMessage(
-              guest.rsvp.message || ""
-            );
-          }
         }
 
       } catch (error) {
