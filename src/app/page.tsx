@@ -3,7 +3,6 @@
 import {
   Suspense,
   useState,
-  useEffect,
 } from "react";
 
 import { useSearchParams } from "next/navigation";
@@ -33,50 +32,11 @@ function HomeContent() {
   const searchParams = useSearchParams();
 
   const guestId =
-    searchParams.get("guest") || "";
+  searchParams.get("id") || "";
 
-  const [guestName, setGuestName] =
-    useState("Tamu Undangan");
-
-    useEffect(() => {
-
-  if (!guestId) return;
-
-  const loadGuest =
-    async () => {
-
-      try {
-
-        const res =
-          await fetch(
-            `/api/rsvp?guest=${guestId}`
-          );
-
-        const guest =
-          await res.json();
-
-        if (guest?.name) {
-
-          setGuestName(
-            guest.name
-          );
-
-        }
-
-      } catch (error) {
-
-        console.error(
-          "Load guest error:",
-          error
-        );
-
-      }
-
-    };
-
-  loadGuest();
-
-}, [guestId]);
+const guestName =
+  searchParams.get("to") ||
+  "Tamu Undangan";
 
   const [opened, setOpened] =
     useState(false);
