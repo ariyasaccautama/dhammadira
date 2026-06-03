@@ -92,6 +92,15 @@ export default function RSVP({
   const [hasSubmitted, setHasSubmitted] =
     useState(false);
 
+  const [originalName, setOriginalName] =
+    useState("");
+
+  const [originalAttendance, setOriginalAttendance] =
+    useState<AttendanceStatus>("Hadir");
+
+  const [originalMessage, setOriginalMessage] =
+    useState("");
+
   const loadGuest =
     useCallback(async () => {
 
@@ -110,6 +119,18 @@ export default function RSVP({
         if (guest?.rsvp) {
 
           setHasSubmitted(true);
+
+          setOriginalName(
+            guestName
+          );
+
+          setOriginalAttendance(
+            guest.rsvp.attendance
+          );
+
+          setOriginalMessage(
+            guest.rsvp.message || ""
+          );
 
           setAttendance(
             guest.rsvp.attendance
@@ -237,6 +258,21 @@ export default function RSVP({
         "Ucapan & Doa belum terisi"
       );
       return;
+    }
+
+    if (
+      hasSubmitted &&
+      name.trim() === originalName.trim() &&
+      attendance === originalAttendance &&
+      message.trim() === originalMessage.trim()
+    ) {
+
+      toast(
+        "Tidak ada data yang diubah"
+      );
+
+      return;
+
     }
 
     setLoading(true);
