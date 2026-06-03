@@ -419,7 +419,7 @@ export default function RSVP({
           </h3>
 
           <p className="text-gray-400 mb-6">
-              <i>Bisa diupdate di kemudian hari dengan link/url yg diberikan</i>
+              <i>Dapat diupdate di kemudian hari dengan link/url yangg diberikan.</i>
           </p>
 
           <input
