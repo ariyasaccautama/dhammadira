@@ -33,6 +33,7 @@ export async function GET(
           guest_id,
           name,
           rsvp (
+            name,
             attendance,
             message
           )

@@ -120,9 +120,17 @@ export default function RSVP({
 
           setHasSubmitted(true);
 
-          setOriginalName(
-            guestName
-          );
+          if (guest.rsvp.name) {
+
+            setName(
+              guest.rsvp.name
+            );
+
+            setOriginalName(
+              guest.rsvp.name
+            );
+
+          }
 
           setOriginalAttendance(
             guest.rsvp.attendance
@@ -305,6 +313,18 @@ export default function RSVP({
       );
 
       setHasSubmitted(true);
+
+      setOriginalName(
+        name
+      );
+
+      setOriginalAttendance(
+        attendance
+      );
+
+      setOriginalMessage(
+        message
+      );
 
       setPage(1);
 
