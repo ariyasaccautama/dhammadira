@@ -196,9 +196,8 @@ export default function RSVP({
       //consolelog
       const startPost = performance.now();
 
-      await fetch(API, {
+      const res = await fetch(API, {
         method: "POST",
-
         body: JSON.stringify({
           guestId,
           name,
@@ -206,6 +205,15 @@ export default function RSVP({
           message,
         }),
       });
+
+      const result =
+        await res.json();
+
+      if (!res.ok) {
+        throw new Error(
+          result.error
+        );
+      }
 
       //consolelog
       console.log(

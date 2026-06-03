@@ -103,6 +103,25 @@ export async function POST(
     message,
   } = body;
 
+  const { data: guest } =
+    await supabase
+      .from("guests")
+      .select("guest_id")
+      .eq("guest_id", guestId)
+      .single();
+
+  if (!guest) {
+    return NextResponse.json(
+      {
+        success: false,
+        error: "Guest not found",
+      },
+      {
+        status: 404,
+      }
+    );
+  }
+
   const { error } =
     await supabase
       .from("rsvp")
