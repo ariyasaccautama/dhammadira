@@ -74,6 +74,9 @@ export default function RSVP({
   const [loadingWishes, setLoadingWishes] =
     useState(false);
 
+  const [isPageChanging, setIsPageChanging] =
+    useState(false);
+
   const [loadingText, setLoadingText] =
     useState("Mengambil ucapan & doa terbaik🥰");
 
@@ -171,6 +174,7 @@ export default function RSVP({
         console.error(error);
       } finally {
         setLoadingWishes(false);
+        setIsPageChanging(false);
       }
     },
     [
@@ -436,7 +440,7 @@ export default function RSVP({
 
           <div className="space-y-5">
 
-            {loadingWishes ? (
+            {loadingWishes && isPageChanging ? (
 
               <div className="py-10 text-center text-gray-400">
                 {loadingText}
@@ -485,11 +489,12 @@ export default function RSVP({
                 disabled={
                   page === 1
                 }
-                onClick={() =>
+                onClick={() => {
+                  setIsPageChanging(true);
                   setPage(
                     page - 1
-                  )
-                }
+                  );
+                }}
                 className="bg-zinc-800 p-2 rounded-lg disabled:opacity-30"
               >
                 <ChevronLeft />
@@ -505,11 +510,12 @@ export default function RSVP({
                   page ===
                   totalPages
                 }
-                onClick={() =>
+                onClick={() => {
+                  setIsPageChanging(true);
                   setPage(
                     page + 1
-                  )
-                }
+                  );
+                }}
                 className="bg-zinc-800 p-2 rounded-lg disabled:opacity-30"
               >
                 <ChevronRight />
