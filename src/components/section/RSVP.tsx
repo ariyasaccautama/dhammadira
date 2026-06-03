@@ -243,7 +243,7 @@ export default function RSVP({
         ) {
 
           toast.error(
-            "ID/URL Undangan tidak valid ❌"
+            "ID/URL Undangan tidak valid"
           );
 
         } else {
