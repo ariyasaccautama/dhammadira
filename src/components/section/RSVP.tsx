@@ -55,7 +55,7 @@ export default function RSVP({
   guestName,
 }: Props) {
   const API =
-    process.env.NEXT_PUBLIC_RSVP_API!;
+    "/api/rsvp";
 
   const [name, setName] =
     useState(guestName);
@@ -92,7 +92,7 @@ export default function RSVP({
 
         const res =
           await fetch(
-            `${API}?action=guest&id=${guestId}`
+            `${API}?guest=${guestId}`
           );
 
         const guest =
@@ -106,13 +106,20 @@ export default function RSVP({
             guest.name
           );
 
-          setAttendance(
-            guest.attendance
-          );
+          if (guest.rsvp) {
 
-          setMessage(
-            guest.message || ""
-          );
+            setHasSubmitted(true);
+
+            setAttendance(
+              guest.rsvp.attendance
+            );
+
+            setMessage(
+              guest.rsvp.message ||
+                ""
+            );
+
+          }
 
         }
 
@@ -137,7 +144,7 @@ export default function RSVP({
       try {
         const res =
           await fetch(
-          `${API}?action=wishes&page=${page}&pageSize=5`
+          `${API}?page=${page}`
         );
 
         const data =
