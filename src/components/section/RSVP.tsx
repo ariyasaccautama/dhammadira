@@ -71,6 +71,12 @@ export default function RSVP({
   const [loading, setLoading] =
     useState(false);
 
+  const [loadingWishes, setLoadingWishes] =
+    useState(false);
+
+  const [loadingText, setLoadingText] =
+    useState("Mengambil ucapan terbaik🥰");
+
   const [wishes, setWishes] =
     useState<Wish[]>([]);
 
@@ -125,7 +131,8 @@ export default function RSVP({
 
   const loadWishes = useCallback(
     async () => {
-      
+      setLoadingWishes(true);
+
       //consolelog
       const startLoad =
       performance.now();
@@ -133,7 +140,10 @@ export default function RSVP({
       try {
         const res =
           await fetch(
-          `${API}?page=${page}`
+          `${API}?page=${page}`,
+          {
+            cache: "no-store",
+          }
         );
 
         const data =
@@ -170,6 +180,36 @@ export default function RSVP({
   useEffect(() => {
     loadWishes();
   }, [loadWishes]);
+
+  useEffect(() => {
+
+  if (!loadingWishes) return;
+
+  const texts = [
+    "Mengambil ucapan terbaik🥰",
+    "Mengambil ucapan terbaik.🥰",
+    "Mengambil ucapan terbaik..🥰",
+    "Mengambil ucapan terbaik...🥰",
+  ];
+
+  let index = 0;
+
+  const interval = setInterval(() => {
+
+    index =
+      (index + 1) %
+      texts.length;
+
+    setLoadingText(
+      texts[index]
+    );
+
+  }, 350);
+
+  return () =>
+    clearInterval(interval);
+
+}, [loadingWishes]);
 
   const submitRSVP = async () => {
     if (!name.trim()) {
@@ -255,7 +295,7 @@ export default function RSVP({
         }
 
       } finally {
-      setLoading(false);
+      setLoadingWishes(false);
     }
   };
 
@@ -399,33 +439,44 @@ export default function RSVP({
 
           <div className="space-y-5">
 
-            {wishes.map(
-              (
-                wish,
-                index
-              ) => (
-                <div
-                  key={index}
-                  className="border-b border-zinc-800 pb-5"
-                >
-                  <div className="flex items-center gap-2 mb-2">
+            {loadingWishes ? (
 
-                    <h4 className="font-bold text-lg">
-                      {wish.name}
-                    </h4>
+              <div className="py-10 text-center text-gray-400">
+                {loadingText}
+              </div>
 
-                    {getStatusIcon(
-                      wish.attendance
-                    )}
+            ) : (
 
-                  </div>
+              <div className="space-y-5">
 
-                  <p className="text-gray-300 whitespace-pre-wrap">
-                    {wish.message}
-                  </p>
+                {wishes.map(
+                  (wish, index) => (
+                    <div
+                      key={index}
+                      className="border-b border-zinc-800 pb-5"
+                    >
+                      <div className="flex items-center gap-2 mb-2">
 
-                </div>
-              )
+                        <h4 className="font-bold text-lg">
+                          {wish.name}
+                        </h4>
+
+                        {getStatusIcon(
+                          wish.attendance
+                        )}
+
+                      </div>
+
+                      <p className="text-gray-300 whitespace-pre-wrap">
+                        {wish.message}
+                      </p>
+
+                    </div>
+                  )
+                )}
+
+              </div>
+
             )}
 
           </div>
