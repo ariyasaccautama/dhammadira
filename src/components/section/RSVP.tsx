@@ -165,6 +165,8 @@ export default function RSVP({
         );
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoadingWishes(false);
       }
     },
     [
@@ -233,9 +235,6 @@ export default function RSVP({
 
     try {
 
-      //consolelog
-      const startPost = performance.now();
-
       const res = await fetch(API, {
         method: "POST",
         body: JSON.stringify({
@@ -255,15 +254,6 @@ export default function RSVP({
         );
       }
 
-      //consolelog
-      console.log(
-      "POST RSVP:",
-      Math.round(
-        performance.now() - startPost
-      ),
-      "ms"
-    );
-
       toast.success(
         hasSubmitted
           ? "RSVP berhasil diperbarui ❤️"
@@ -275,27 +265,30 @@ export default function RSVP({
       setPage(1);
 
       loadWishes();
+
     } catch (error) {
 
-        if (
-          error instanceof Error &&
-          error.message === "Guest not found"
-        ) {
+      if (
+        error instanceof Error &&
+        error.message === "Guest not found"
+      ) {
 
-          toast.error(
-            "ID/URL Undangan tidak valid"
-          );
+        toast.error(
+          "ID/URL Undangan tidak valid"
+        );
 
-        } else {
+      } else {
 
-          toast.error(
-            "Gagal mengirim RSVP"
-          );
+        toast.error(
+          "Gagal mengirim RSVP"
+        );
 
-        }
+      }
 
-      } finally {
-      setLoadingWishes(false);
+    } finally {
+
+      setLoading(false);
+
     }
   };
 
