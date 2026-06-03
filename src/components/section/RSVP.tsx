@@ -102,25 +102,18 @@ export default function RSVP({
 
           setHasSubmitted(true);
 
-          setName(
-            guest.name
-          );
+          // JANGAN overwrite nama dari URL
 
           if (guest.rsvp) {
-
-            setHasSubmitted(true);
 
             setAttendance(
               guest.rsvp.attendance
             );
 
             setMessage(
-              guest.rsvp.message ||
-                ""
+              guest.rsvp.message || ""
             );
-
           }
-
         }
 
       } catch (error) {
