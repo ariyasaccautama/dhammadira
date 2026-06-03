@@ -133,6 +133,10 @@ export default function RSVP({
     async () => {
       setLoadingWishes(true);
 
+      setLoadingText(
+        "Mengambil ucapan terbaik🥰"
+      );
+
       //consolelog
       const startLoad =
       performance.now();
