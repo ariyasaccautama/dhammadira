@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Dhamma & Dira Wedding Invitation",
   description:
-    "The Wedding of Prasetya Dhamma & Dira",
+    "The Wedding of Dhamma & Dira",
 };
 
 export default function RootLayout({

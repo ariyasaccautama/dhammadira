@@ -85,6 +85,11 @@ export default function RSVP({
 
   const loadWishes = useCallback(
     async () => {
+      
+      //consolelog
+      const startLoad =
+      performance.now();
+
       try {
         const res =
           await fetch(API);
@@ -93,6 +98,15 @@ export default function RSVP({
           await res.json();
 
         setWishes(data);
+
+        //consloelog
+        console.log(
+          "LOAD WISHES:",
+          Math.round(
+            performance.now() - startLoad
+          ),
+          "ms"
+        );
 
         const existingGuest =
           data.find(
@@ -152,6 +166,10 @@ export default function RSVP({
     setLoading(true);
 
     try {
+
+      //consolelog
+      const startPost = performance.now();
+
       await fetch(API, {
         method: "POST",
 
@@ -163,6 +181,15 @@ export default function RSVP({
         }),
       });
 
+      //consolelog
+      console.log(
+      "POST RSVP:",
+      Math.round(
+        performance.now() - startPost
+      ),
+      "ms"
+    );
+
       toast.success(
         hasSubmitted
           ? "RSVP berhasil diperbarui ❤️"
@@ -171,7 +198,7 @@ export default function RSVP({
 
       setHasSubmitted(true);
 
-      await loadWishes();
+      loadWishes();
 
       setPage(1);
     } catch {
