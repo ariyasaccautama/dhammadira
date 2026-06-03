@@ -31,13 +31,13 @@ export default function Closing() {
 
       {/* Content */}
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
 
-        <h2 className="text-4xl md:text-6xl font-black mb-8">
+        <h2 className="text-4xl md:text-4xl font-black mb-6">
           Sampai Jumpa di Hari Bahagia Kami ✨
         </h2>
 
-        <p className="text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
+        <p className="text-xl text-gray-200 leading-relaxed max-w-4xl mx-auto">
           Terima kasih telah menjadi bagian dari
           cerita cinta kami.
           <br />
@@ -48,7 +48,7 @@ export default function Closing() {
 
         <blockquote
           className="
-            mt-10
+            mt-3
             text-gray-400
             italic
             text-lg
@@ -74,11 +74,11 @@ export default function Closing() {
             mx-auto
           "
         >
-          <div className="text-5xl mb-4">
+          <div className="text-3xl mb-4">
             👔👗
           </div>
 
-          <h3 className="text-2xl font-bold mb-3">
+          <h3 className="text-1xl font-bold mb-3">
             Jangan Lupa Dresscode Ya! 😊
           </h3>
 
@@ -87,7 +87,7 @@ export default function Closing() {
             className="
               bg-red-600
               hover:bg-red-700
-              px-6
+              px-5
               py-3
               rounded-xl
               font-bold
