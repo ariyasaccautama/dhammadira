@@ -75,7 +75,7 @@ export default function RSVP({
     useState(false);
 
   const [loadingText, setLoadingText] =
-    useState("Mengambil ucapan terbaik🥰");
+    useState("Mengambil ucapan & doa terbaik🥰");
 
   const [wishes, setWishes] =
     useState<Wish[]>([]);
@@ -134,7 +134,7 @@ export default function RSVP({
       setLoadingWishes(true);
 
       setLoadingText(
-        "Mengambil ucapan terbaik🥰"
+        "Mengambil ucapan & doa terbaik🥰"
       );
 
       //consolelog
@@ -192,10 +192,10 @@ export default function RSVP({
   if (!loadingWishes) return;
 
   const texts = [
-    "Mengambil ucapan terbaik🥰",
-    "Mengambil ucapan terbaik.🥰",
-    "Mengambil ucapan terbaik..🥰",
-    "Mengambil ucapan terbaik...🥰",
+    "Mengambil ucapan & doa terbaik🥰",
+    "Mengambil ucapan & doa terbaik.🥰",
+    "Mengambil ucapan & doa terbaik..🥰",
+    "Mengambil ucapan & doa terbaik...🥰",
   ];
 
   let index = 0;
