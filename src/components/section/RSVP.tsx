@@ -283,6 +283,14 @@ export default function RSVP({
 
     }
 
+    const cleanedMessage =
+      message
+        .replace(
+          /\n{3,}/g,
+          "\n\n"
+        )
+        .trim();
+
     setLoading(true);
 
     try {
@@ -293,7 +301,8 @@ export default function RSVP({
           guestId,
           name,
           attendance,
-          message,
+          message:
+            cleanedMessage,
         }),
       });
 
@@ -463,6 +472,7 @@ export default function RSVP({
           <textarea
             rows={5}
             value={message}
+            maxLength={225}
             onChange={(e) =>
               setMessage(
                 e.target.value
@@ -471,6 +481,10 @@ export default function RSVP({
             placeholder="Tulis ucapan dan doa terbaik..."
             className="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3"
           />
+
+          <p className="text-right text-sm text-gray-500 mt-2">
+            {message.length}/225
+          </p>
 
           <button
             disabled={loading}
@@ -488,13 +502,13 @@ export default function RSVP({
 
         {/* UCAPAN */}
 
-        <div className="bg-[#141414] border border-red-900/30 rounded-2xl p-8">
+        <div className="bg-[#141414] border border-red-900/30 rounded-2xl p-8 h-[700px] flex flex-col">
 
           <h3 className="text-2xl font-bold mb-6">
             Ucapan & Doa
           </h3>
 
-          <div className="space-y-5">
+          <div className="flex-1 overflow-y-auto pr-2">
 
             {loadingWishes && isPageChanging ? (
 
