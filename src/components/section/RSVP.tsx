@@ -418,7 +418,7 @@ export default function RSVP({
             Konfirmasi Kehadiran
           </h3>
 
-          <p className="text-gray-400 mb-6">
+          <p className="text-gray-400 mb-5">
               <i>Dapat diupdate di kemudian hari dengan link/url yang diberikan.</i>
           </p>
 
