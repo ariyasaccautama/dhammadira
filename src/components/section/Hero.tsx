@@ -285,7 +285,7 @@ useEffect(() => {
                 transition
               "
             >
-              ▷ Kisah Kami
+              ▶︎ Kisah Kami
             </button>
 
             <button
