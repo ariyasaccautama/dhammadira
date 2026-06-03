@@ -3,7 +3,6 @@
 import {
   useCallback,
   useEffect,
-  useMemo,
   useState,
 } from "react";
 
@@ -33,8 +32,6 @@ type Props = {
   guestId: string;
   guestName: string;
 };
-
-const ITEMS_PER_PAGE = 5;
 
 const ATTENDANCE_STYLES: Record<
   AttendanceStatus,
@@ -79,9 +76,56 @@ export default function RSVP({
 
   const [page, setPage] =
     useState(1);
+    
+  const [totalPages, setTotalPages] =
+    useState(1);
 
   const [hasSubmitted, setHasSubmitted] =
     useState(false);
+
+  const loadGuest =
+    useCallback(async () => {
+
+      if (!guestId) return;
+
+      try {
+
+        const res =
+          await fetch(
+            `${API}?action=guest&id=${guestId}`
+          );
+
+        const guest =
+          await res.json();
+
+        if (guest) {
+
+          setHasSubmitted(true);
+
+          setName(
+            guest.name
+          );
+
+          setAttendance(
+            guest.attendance
+          );
+
+          setMessage(
+            guest.message || ""
+          );
+
+        }
+
+      } catch (error) {
+
+        console.error(error);
+
+      }
+
+    }, [
+      API,
+      guestId,
+    ]);
 
   const loadWishes = useCallback(
     async () => {
@@ -92,12 +136,18 @@ export default function RSVP({
 
       try {
         const res =
-          await fetch(API);
+          await fetch(
+          `${API}?action=wishes&page=${page}&pageSize=5`
+        );
 
         const data =
           await res.json();
 
-        setWishes(data);
+        setWishes(data.data);
+
+        setTotalPages(
+          data.totalPages
+        );
 
         //consloelog
         console.log(
@@ -107,40 +157,20 @@ export default function RSVP({
           ),
           "ms"
         );
-
-        const existingGuest =
-          data.find(
-            (item: Wish) =>
-              String(
-                item.guestId
-              ) ===
-              String(guestId)
-          );
-
-        if (existingGuest) {
-          setHasSubmitted(true);
-
-          setName(
-            existingGuest.name
-          );
-
-          setAttendance(
-            existingGuest.attendance as AttendanceStatus
-          );
-
-          setMessage(
-            existingGuest.message ||
-              ""
-          );
-        }
       } catch (error) {
         console.error(error);
       }
     },
-    [API, guestId]
+    [
+      API,
+      page,
+    ]
   );
 
-  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => {
+    loadGuest();
+  }, [loadGuest]);
+
   useEffect(() => {
     loadWishes();
   }, [loadWishes]);
@@ -198,9 +228,9 @@ export default function RSVP({
 
       setHasSubmitted(true);
 
-      loadWishes();
-
       setPage(1);
+
+      loadWishes();
     } catch {
       toast.error(
         "Gagal mengirim RSVP"
@@ -241,25 +271,6 @@ export default function RSVP({
       />
     );
   };
-
-  const totalPages =
-    Math.ceil(
-      wishes.length /
-        ITEMS_PER_PAGE
-    ) || 1;
-
-  const paginatedWishes =
-    useMemo(() => {
-      const start =
-        (page - 1) *
-        ITEMS_PER_PAGE;
-
-      return wishes.slice(
-        start,
-        start +
-          ITEMS_PER_PAGE
-      );
-    }, [wishes, page]);
 
   return (
     <section id="rsvp" className="py-24 px-6">
@@ -369,7 +380,7 @@ export default function RSVP({
 
           <div className="space-y-5">
 
-            {paginatedWishes.map(
+            {wishes.map(
               (
                 wish,
                 index
@@ -400,8 +411,7 @@ export default function RSVP({
 
           </div>
 
-          {wishes.length >
-            ITEMS_PER_PAGE && (
+          {totalPages > 1 && (
             <div className="flex items-center justify-center gap-4 mt-8">
 
               <button
