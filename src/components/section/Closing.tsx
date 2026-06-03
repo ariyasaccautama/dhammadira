@@ -82,11 +82,6 @@ export default function Closing() {
             Jangan Lupa Dresscode Ya! 😊
           </h3>
 
-          <p className="text-gray-400 mb-6">
-            Yuk tampil selaras dan ikut
-            meramaikan momen spesial kami.
-          </p>
-
           <button
             onClick={scrollToDresscode}
             className="
@@ -105,7 +100,7 @@ export default function Closing() {
 
         {/* Footer */}
 
-        <div className="mt-24">
+        <div className="mt-4">
 
           <div
             className="
@@ -151,7 +146,7 @@ export default function Closing() {
             </span>
           </a>
 
-          <p className="text-xs text-gray-500 mt-8">
+          <p className="text-xs text-gray-500 mt-3">
             © 2026 Dhamma & Dira Wedding Invitation
           </p>
 
