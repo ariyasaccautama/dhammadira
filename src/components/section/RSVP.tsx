@@ -414,9 +414,13 @@ export default function RSVP({
 
         <div className="bg-[#141414] border border-red-900/30 rounded-2xl p-8">
 
-          <h3 className="text-2xl font-bold mb-6">
+          <h3 className="text-2xl font-bold mb-0.5">
             Konfirmasi Kehadiran
           </h3>
+
+          <p className="text-gray-400 mb-6">
+              <i>Bisa diupdate di kemudian hari dengan link/url yg diberikan</i>
+          </p>
 
           <input
             value={name}
