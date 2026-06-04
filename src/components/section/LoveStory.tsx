@@ -18,31 +18,31 @@ import {
   const stories = [
     {
       title: "EPS 1: Awal Bertemu",
-      year: "2020",
-      image: "/images/story1.jpg",
+      year: "Episode 1",
+      image: "/images/story1.jpeg",
       description:
         "Kisah kami dimulai dari sebuah pertemuan yang sederhana namun berkesan.",
     },
     {
       title: "EPS 2: Mulai Dekat",
-      year: "2021",
-      image: "/images/story2.jpg",
+      year: "Episode 2",
+      image: "/images/story2.jpeg",
       description:
         "Seiring berjalannya waktu, kami semakin mengenal dan memahami satu sama lain.",
     },
     {
       title: "EPS 3: Lamaran",
-      year: "2025",
+      year: "Episode 3",
       image: "/images/story3.jpg",
       description:
         "Dengan penuh keyakinan dan cinta, kami memutuskan melangkah ke jenjang yang lebih serius.",
     },
     {
       title: "EPS 4: Menikah",
-      year: "2026",
+      year: "Episode 4",
       image: "/images/story4.jpg",
       description:
-        "Perjalanan kami bermuara pada hari bahagia yang akan kami rayakan bersama keluarga dan sahabat tercinta.",
+        "Perjalanan kami bermuara pada hari bahagia yang akan kami rayakan bersama keluarga tercinta.❤️",
     },
   ];
 
