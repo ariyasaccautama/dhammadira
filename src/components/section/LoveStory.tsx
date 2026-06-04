@@ -26,21 +26,21 @@ import {
     {
       title: "EPS 2: Mulai Dekat",
       year: "2021",
-      image: "/images/story1.jpg",
+      image: "/images/story2.jpg",
       description:
         "Seiring berjalannya waktu, kami semakin mengenal dan memahami satu sama lain.",
     },
     {
       title: "EPS 3: Lamaran",
       year: "2025",
-      image: "/images/story1.jpg",
+      image: "/images/story3.jpg",
       description:
         "Dengan penuh keyakinan dan cinta, kami memutuskan melangkah ke jenjang yang lebih serius.",
     },
     {
       title: "EPS 4: Menikah",
       year: "2026",
-      image: "/images/story1.jpg",
+      image: "/images/story4.jpg",
       description:
         "Perjalanan kami bermuara pada hari bahagia yang akan kami rayakan bersama keluarga dan sahabat tercinta.",
     },
