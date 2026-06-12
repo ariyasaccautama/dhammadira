@@ -19,7 +19,7 @@ import {
     {
       title: "EPS 1: Awal Bertemu",
       year: "Episode 1",
-      image: "/images/story1.jpeg",
+      image: "/images/story1.JPEG",
       description:
         "Kisah kami dimulai dari sebuah pertemuan yang sederhana namun berkesan.",
     },
@@ -33,14 +33,14 @@ import {
     {
       title: "EPS 3: Lamaran",
       year: "Episode 3",
-      image: "/images/story3.jpg",
+      image: "/images/story3.JPG",
       description:
         "Dengan penuh keyakinan dan cinta, kami memutuskan melangkah ke jenjang yang lebih serius.",
     },
     {
       title: "EPS 4: Menikah",
       year: "Episode 4",
-      image: "/images/story4.jpg",
+      image: "/images/story4.JPG",
       description:
         "Perjalanan kami bermuara pada hari bahagia yang akan kami rayakan bersama keluarga tercinta.❤️",
     },
