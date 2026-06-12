@@ -549,13 +549,14 @@ export default function RSVP({
                       className="flex gap-4 border-b border-zinc-800 pb-5"
                     >
 
-                      <Image
-                        src={getAvatar(wish.name)}
-                        alt={wish.name}
-                        width={60}
-                        height={20}
-                        className="object-cover flex-shrink-0"
-                      />
+                      <div className="w-8 h-8 flex-shrink-0 relative">
+                        <Image
+                          src={getAvatar(wish.name)}
+                          alt={wish.name}
+                          fill
+                          className="object-cover rounded-md"
+                        />
+                      </div>
 
                       <div className="flex-1">
 
