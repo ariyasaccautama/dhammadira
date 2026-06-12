@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 
+import Image from "next/image";
 import toast from "react-hot-toast";
 
 import {
@@ -397,6 +398,23 @@ export default function RSVP({
     );
   };
 
+  const avatars = [
+      "/images/usernet/net1.png",
+      "/images/usernet/net2.png",
+      "/images/usernet/net3.png",
+      "/images/usernet/net4.png",
+      "/images/usernet/net5.png",
+    ];
+
+    const getAvatar = (name: string) => {
+    const hash = [...name].reduce(
+        (acc, char) => acc + char.charCodeAt(0),
+        0
+      );
+
+      return avatars[hash % avatars.length];
+    };
+
   return (
     <section id="rsvp" className="py-24 px-6">
 
@@ -528,23 +546,36 @@ export default function RSVP({
                   (wish, index) => (
                     <div
                       key={index}
-                      className="border-b border-zinc-800 pb-5"
+                      className="flex gap-4 border-b border-zinc-800 pb-5"
                     >
-                      <div className="flex items-center gap-2 mb-2">
 
-                        <h4 className="font-bold text-lg">
-                          {wish.name}
-                        </h4>
+                      <Image
+                        src={getAvatar(wish.name)}
+                        alt={wish.name}
+                        width={60}
+                        height={20}
+                        className="object-cover flex-shrink-0"
+                      />
 
-                        {getStatusIcon(
-                          wish.attendance
-                        )}
+                      <div className="flex-1">
+
+                        <div className="flex items-center gap-2 mb-2">
+
+                          <h4 className="font-bold text-lg">
+                            {wish.name}
+                          </h4>
+
+                          {getStatusIcon(
+                            wish.attendance
+                          )}
+
+                        </div>
+
+                        <p className="text-gray-300 whitespace-pre-wrap">
+                          {wish.message}
+                        </p>
 
                       </div>
-
-                      <p className="text-gray-300 whitespace-pre-wrap">
-                        {wish.message}
-                      </p>
 
                     </div>
                   )
