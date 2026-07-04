@@ -80,7 +80,7 @@ export default function Footer() {
           <FaInstagram size={20} />
 
           <span className="font-medium">
-            @ariyamelulu
+            @ariyamelul
           </span>
         </a>
 
