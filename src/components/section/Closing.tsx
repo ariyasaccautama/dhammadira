@@ -113,7 +113,7 @@ export default function Closing() {
           />
 
           <p className="text-gray-500 text-sm">
-            Design & Developed with
+            Designed & Developed with
             <span className="text-red-500">
               {" "}❤️{" "}
             </span>
