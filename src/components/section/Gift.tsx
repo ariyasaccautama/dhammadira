@@ -120,7 +120,7 @@ export default function Gift() {
                   relative
                   overflow-hidden
                   rounded-3xl
-                  p-8
+                  p-6
                   text-white
                   border
                   border-yellow-500/20
@@ -157,15 +157,15 @@ export default function Gift() {
                   Bank Account
                 </p>
 
-                <h3 className="text-3xl font-black mt-4">
+                <h3 className="text-3xl font-black mt-3">
                   {weddingData.gift.groom.bank}
                 </h3>
 
-                <p className="text-[38px] md:text-2xl font-black text-yellow-400 mt-5 tracking-wide break-all">
+                <p className="text-3xl md:text-2xl font-black text-yellow-400 mt-3 tracking-wide">
                   {weddingData.gift.groom.account}
                 </p>
 
-                <p className="text-gray-300 mt-4 text-sm md:text-lg">
+                <p className="text-gray-300 mt-2 text-sm md:text-lg">
                   {weddingData.gift.groom.holder}
                 </p>
 
@@ -177,7 +177,7 @@ export default function Gift() {
                     )
                   }
                   className="
-                    mt-8
+                    mt-5
                     flex
                     items-center
                     gap-2
@@ -185,10 +185,11 @@ export default function Gift() {
                     text-black
                     hover:bg-gray-200
                     px-6
-                    py-4
+                    py-3
                     rounded-xl
                     font-bold
-                    transition
+                    transition-all
+                    duration-300
                   "
                 >
                   <Copy size={18} />
@@ -204,7 +205,7 @@ export default function Gift() {
                   relative
                   overflow-hidden
                   rounded-3xl
-                  p-8
+                  p-6
                   text-white
                   border
                   border-blue-500/20
@@ -241,15 +242,15 @@ export default function Gift() {
                   Bank Account
                 </p>
 
-                <h3 className="text-3xl font-black mt-4">
+                <h3 className="text-3xl font-black mt-3">
                   {weddingData.gift.bride.bank}
                 </h3>
 
-                <p className="text-[38px] md:text-2xl font-black mt-5 tracking-wide break-all">
+                <p className="text-3xl md:text-2xl font-black mt-3 tracking-wide">
                   {weddingData.gift.bride.account}
                 </p>
 
-                <p className="text-blue-100 mt-4 text-sm md:text-lg">
+                <p className="text-blue-100 mt-2 text-sm md:text-lg">
                   {weddingData.gift.bride.holder}
                 </p>
 
@@ -261,7 +262,7 @@ export default function Gift() {
                     )
                   }
                   className="
-                    mt-8
+                    mt-5
                     flex
                     items-center
                     gap-2
@@ -269,10 +270,11 @@ export default function Gift() {
                     text-black
                     hover:bg-gray-200
                     px-6
-                    py-4
+                    py-3
                     rounded-xl
                     font-bold
-                    transition
+                    transition-all
+                    duration-300
                   "
                 >
                   <Copy size={18} />
