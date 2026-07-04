@@ -50,7 +50,7 @@ export default function Footer() {
         "
       >
         <p className="text-gray-400 text-sm">
-          Design & Developed with
+          Designed & Developed with
           <span className="text-red-500">
             {" "}
             ❤️{" "}
