@@ -302,11 +302,11 @@ export default function Gift() {
                 "
               >
 
-                <div className="absolute right-8 top-8 text-7xl opacity-10">
+                <div className="absolute right-8 top-8 text-7xl opacity-10 pointer-events-none">
                   🎁
                 </div>
 
-                <div className="absolute left-8 bottom-6 text-5xl opacity-10">
+                <div className="absolute left-8 bottom-6 text-5xl opacity-10 pointer-events-none">
                   💝
                 </div>
 
@@ -340,7 +340,9 @@ export default function Gift() {
                     )
                   }
                   className="
-                    flex
+                    relative
+                    z-10
+                    inline-flex
                     items-center
                     gap-2
                     bg-red-600
@@ -349,12 +351,14 @@ export default function Gift() {
                     py-3
                     rounded-xl
                     font-bold
-                    transition
+                    transition-all
+                    duration-300
+                    cursor-pointer
                   "
-                >
+                  >
                   <Copy size={18} />
-                  Salin Alamat
-                </button>
+                  <span>Salin Alamat</span>
+                  </button>
 
               </div>
 
