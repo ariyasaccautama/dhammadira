@@ -142,7 +142,7 @@ export default function Closing() {
             <FaInstagram size={20} />
 
             <span className="font-medium">
-              Instagram
+              ariyamelulu
             </span>
           </a>
 
