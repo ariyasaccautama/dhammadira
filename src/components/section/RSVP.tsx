@@ -62,8 +62,8 @@ export default function RSVP({
     useState(guestName);
 
   const [attendance, setAttendance] =
-    useState<AttendanceStatus>(
-      "Hadir"
+    useState<AttendanceStatus | null>(
+      null
     );
 
   const [message, setMessage] =
@@ -97,7 +97,7 @@ export default function RSVP({
     useState("");
 
   const [originalAttendance, setOriginalAttendance] =
-    useState<AttendanceStatus>("Hadir");
+    useState<AttendanceStatus | null>(null);
 
   const [originalMessage, setOriginalMessage] =
     useState("");
@@ -255,6 +255,13 @@ export default function RSVP({
     if (!name.trim()) {
       toast.error(
         "Nama belum terisi"
+      );
+      return;
+    }
+
+    if (!attendance) {
+      toast.error(
+        "Silakan pilih status kehadiran"
       );
       return;
     }
